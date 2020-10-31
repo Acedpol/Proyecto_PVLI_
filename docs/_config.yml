@@ -1,5 +1,5 @@
-title: Platero y yo ~ Juan Ramón Jimenez
-description: Proyecto inspirado en la novela de Juan Ramón Jimenez ~ "Platero y yo", en el que se usa la librería de Phaser 3.
-logo: /images/adaptacion.png
-show_downloads: true
+title: Platero y yo, Generation Games (GG)
+description: Proyecto inspirado en "Platero y yo" novela de Juan Ramón Jimenez
+logo: /assets/img/adaptacion.png
+show_downloads: false
 theme: jekyll-theme-minimal
