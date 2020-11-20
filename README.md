@@ -10,3 +10,5 @@
  3. Ejecutar el archivo index.html
  
  ###### website: https://acedpol.github.io/Proyecto_PVLI_/
+
+ ###### GDD: https://docs.google.com/document/d/1n8zUSCY_d7iYZYBvqZWV3PU-U1AZNrKiSxxpHIjInHY/edit?usp=sharing
