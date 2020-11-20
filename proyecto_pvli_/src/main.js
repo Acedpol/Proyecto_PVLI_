@@ -1,29 +1,31 @@
+import Game from './Game.js';
 import Bootloader from './Bootloader.js';
 
 const config = {
-    title: "proyecto_pvli_",
-    version: "0.0.1",
-    type: Phaser.WEBGL,
+    title: "proyecto_pvli_", //
+    version: "0.0.1", //
+    type: Phaser.AUTO,
+    // ventana del juego
     scale: {
         parent: "container",
-        width: 600,
-        height: 400,
+        width: 1400,
+        height: 800,
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    backgroundColor: "#76C9F0",
+    backgroundColor: "#76C9F0", //
+    // aspectos del juego
     pixelArt: true,
+    input: {
+        gamepad: true,
+    },
     physics: {
         default: "arcade",
-        "arcade": {
-            gravity: {
-                y: 500
-            }
-        }
+        "arcade": { gravity: { y: 400 }, debug: false } 
     },
-    scene: [
-        Bootloader
-    ]
+    scene: [Bootloader, Game]
 };
 
 new Phaser.Game(config);
+
+// lo que tiene dos barras es añadido

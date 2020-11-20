@@ -1,11 +1,11 @@
 class Bootloader extends Phaser.Scene {
     constructor() {
-        super('Bootloader'); 
+        super({ key:"Bootloader" }); 
     }
 
     preload() {
         console.log('Bootloader');
-        this.load.setPath('./assets/');
+        this.load.setPath('./assets/images');
 
         this.load.image('burro', 'PseudoPlatero - Emule Pro.png');
 
