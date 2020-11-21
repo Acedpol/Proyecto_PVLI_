@@ -9,4 +9,4 @@ npx http-server
 ```
 4. Abrir la ruta indicada por el cmd en el navegador. Por ejemplo: ```http://190.160.1.1:8080```
 
-###### Con esto se verá al completo en la web mediante un servidor local.
+##### Con esto se verá al completo en la web mediante un servidor local.
