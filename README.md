@@ -1,13 +1,11 @@
-# Proyecto_PVLI_
- This will be the proyect for PVLI, whose proyect is a Phaser 3 implementation, in which we will use JavaScrypt, HTML5 and CSS type files (.json)
- Este repositorio está dedicado al proyecto de PVLI, cuyo proyecto será una implementación de Phaser 3, en el cual se usarán archivos de tipo JavaScrypt, HTML5 y CSS (.json)
+# Platero's Tale
+ > EN: This will be the proyect for PVLI, whose proyect is a Phaser 3 implementation, in which we will use JavaScrypt, HTML5, CSS and JSON files. 
  
- Paquete de módulos de node: https://drive.google.com/drive/folders/1J-O3w1PgyO4vIECGbR9jbqL_REE8d_a8?usp=sharing
- 
- ### Instrucciones:
- 1. Descargar el repositorio + el paquete de módulos de node
- 2. Copiar y pegar dentro del proyecto el paquete de node
- 3. Ejecutar el archivo index.html
+ > SP: Este repositorio está dedicado al proyecto de PVLI, cuyo proyecto será una implementación de Phaser 3, en el cual se usarán archivos de tipo JavaScrypt, HTML5, CSS y JSON.
+ ___
+ - En la carpeta **_docs_** se encuentran los archivos que forman la web.
+ - En la carpeta **_proyect_pvli__** se encuentran los archivos que componen el videojuego.
+ - Cada uno tiene su propio _readme_ con información relevante para su uso.
  
  ###### website: https://acedpol.github.io/Proyecto_PVLI_/
 
