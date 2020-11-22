@@ -128,7 +128,7 @@
 
 .highlight { background-color: #f8f8f8; }
 
-body { background-color: #fff; padding: 50px; font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #727272; font-weight: 400; }
+body { background-color:#fff; padding: 50px; font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #727272; font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 { color: #222; margin: 0 0 20px; }
 
@@ -170,7 +170,7 @@ img { max-width: 100%; }
 
 header { width: 270px; float: left; position: fixed; -webkit-font-smoothing: subpixel-antialiased; }
 
-header ul { list-style: none; height: 40px; padding: 0; background: #f4f4f4; border-radius: 5px; border: 1px solid #e0e0e0; width: 270px; }
+header ul { list-style: none; height: 40px; padding: 0; background: #f4f4f4; border-radius: 5px; border: 1px solid #e0e0e0; width: 180px; }
 
 header li { width: 89px; float: left; border-right: 1px solid #e0e0e0; height: 40px; }
 
@@ -186,7 +186,7 @@ header ul a:active { background-color: #f0f0f0; }
 
 strong { color: #222; font-weight: 700; }
 
-header ul li + li + li { border-right: none; width: 89px; }
+header ul li + li { border-right: none; width: 89px; }
 
 header ul a strong { font-size: 14px; display: block; color: #222; }
 
@@ -199,7 +199,7 @@ hr { border: 0; background: #e5e5e5; height: 1px; margin: 0 0 20px; }
 footer { width: 270px; float: left; position: fixed; bottom: 50px; -webkit-font-smoothing: subpixel-antialiased; }
 
 @media print, screen and (max-width: 960px) { div.wrapper { width: auto; margin: 0; }
-  header, section, footer { float: none; position: static; width: auto; }
+  header, section, footer { float: none; position: fixed; width: auto; }
   header { padding-right: 320px; }
   section { border: 1px solid #e5e5e5; border-width: 1px 0; padding: 20px 0; margin: 0 0 20px; }
   header a small { display: inline; }
@@ -210,5 +210,5 @@ footer { width: 270px; float: left; position: fixed; bottom: 50px; -webkit-font-
   pre, code { word-wrap: normal; } }
 @media print, screen and (max-width: 480px) { body { padding: 15px; }
   header ul { width: 99%; }
-  header li, header ul li + li + li { width: 33%; } }
+  header li, header ul li + li { width: 33%; } }
 @media print { body { padding: 0.4in; font-size: 12pt; color: #444; } }
