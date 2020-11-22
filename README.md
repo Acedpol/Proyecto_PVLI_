@@ -11,3 +11,11 @@
  ###### GDD: https://docs.google.com/document/d/1n8zUSCY_d7iYZYBvqZWV3PU-U1AZNrKiSxxpHIjInHY/edit?usp=sharing
  
  ###### pivotal tracker: https://www.pivotaltracker.com/n/projects/2474691
+ 
+ ___
+ ___
+ 
+ #### Webs útiles:
+ 
+ - *Curso completo de edición de archivos CSS: https://www.w3schools.com/css/default.asp*
+ - *Manual de uso de archivos JSON: https://www.json.org/json-es.html*
