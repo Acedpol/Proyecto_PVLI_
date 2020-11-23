@@ -11,6 +11,10 @@
  ###### GDD: https://docs.google.com/document/d/1n8zUSCY_d7iYZYBvqZWV3PU-U1AZNrKiSxxpHIjInHY/edit?usp=sharing
  
  ###### pivotal tracker: https://www.pivotaltracker.com/n/projects/2474691
+
+ ###### Arquitectura Antigua: https://drive.google.com/file/d/1B3NTcCrNRc7D7IHi2svY9JxskboJyzo2/view?usp=sharing
+
+ ###### Nueva Arquitectura en proceso: https://drive.google.com/file/d/1fdzaqrhfvPPrEq2kRV5FCk7kSp_H8JpD/view?usp=sharing
  
  ___
  ___
