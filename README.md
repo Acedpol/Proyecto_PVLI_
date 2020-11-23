@@ -3,6 +3,8 @@
  
  > SP: Este repositorio está dedicado al proyecto de PVLI, cuyo proyecto será una implementación de Phaser 3, en el cual se usarán archivos de tipo JavaScrypt, HTML5, CSS y JSON.
  ___
+ #### Proyecto desarrollado por: _Generation Games (GG)_
+ ___
  ![Imagen de JRJ con su burrito][logo]
  ___
  #### IMPORTANTE:
