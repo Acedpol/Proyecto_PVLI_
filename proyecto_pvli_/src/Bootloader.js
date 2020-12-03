@@ -9,19 +9,16 @@ class Bootloader extends Phaser.Scene {
 
         this.load.image('burro', 'Platero.png');
 
-        this.load.spritesheet('player', 'playerspritesheet.png', {frameWidth: 12, frameHeight: 17, endFrame: 12});
+        this.load.image('player', 'Player.png'); //{frameWidth: 12, frameHeight: 17, end: 12});
 
         this.load.on('complete', () => {
             console.log('Load complete');
         });
     }
 
-    create() {
-        this.add.image(this.scale.width / 2, this.scale.height / 2, 'burro');
-        this.add.text((this.scale.width / 3 + 125), this.scale.height / 3, "¡Hola, Soy Platero!", { fontColor: 0x76C9F0 });
-        
+    create() { 
         this.anims.create({
-            key: "left",
+            key: 'left',
             frameRate: 10,
             frame: this.anims.generateFrameNumbers('player', {
                 start: 4,
@@ -29,7 +26,7 @@ class Bootloader extends Phaser.Scene {
             })
             });
         this.anims.create({
-            key: "right",
+            key: 'right',
             frameRate: 10,
             frame: this.anims.generateFrameNumbers('player', {
                 start: 7,
@@ -37,7 +34,7 @@ class Bootloader extends Phaser.Scene {
             })
             });
         this.anims.create({
-            key: "down",
+            key: 'down',
             frameRate: 10,
             frame: this.anims.generateFrameNumbers('player', {
                 start: 0,
@@ -45,7 +42,7 @@ class Bootloader extends Phaser.Scene {
             })
             });
         this.anims.create({
-            key: "up",
+            key: 'up',
             frameRate: 10,
             frame: this.anims.generateFrameNumbers('player', {
                 start: 10,
