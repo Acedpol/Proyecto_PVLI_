@@ -1,16 +1,12 @@
 
 export default class Player extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, text) {
-      super(scene, x, y, {texture: text});
+      super(scene, x, y, text, 0);
       this.scene.add.existing(this);
       this.scene.physics.add.existing(this);
       this.body.setCollideWorldBounds();
       this.speed = 300;
       this.cursors = this.scene.input.keyboard.createCursorKeys();
-    }
-    
-    create(){
-    
     }
 
     preUpdate() {
