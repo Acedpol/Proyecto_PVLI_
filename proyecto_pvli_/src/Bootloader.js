@@ -9,7 +9,7 @@ class bootloader extends Phaser.Scene {
 
         this.load.image('burro', 'Platero.png');
 
-        this.load.spritesheet('player', 'Player.png', {frameWidth: 48, frameHeight: 48, end: 12});
+        this.load.spritesheet("player", 'Player.png', {frameWidth: 48, frameHeight: 48, end: 12});
 
         this.load.on('complete', () => {
             console.log('Load complete');
@@ -20,7 +20,7 @@ class bootloader extends Phaser.Scene {
         this.anims.create({
             key: 'left',
             frameRate: 10,
-            frame: this.anims.generateFrameNumbers('player', {
+            frame: this.anims.generateFrameNumbers("player", {
                 start: 4,
                 end: 6
             })
@@ -28,7 +28,7 @@ class bootloader extends Phaser.Scene {
         this.anims.create({
             key: 'right',
             frameRate: 10,
-            frame: this.anims.generateFrameNumbers('player', {
+            frame: this.anims.generateFrameNumbers("player", {
                 start: 7,
                 end: 9
             })
@@ -36,7 +36,7 @@ class bootloader extends Phaser.Scene {
         this.anims.create({
             key: 'down',
             frameRate: 10,
-            frame: this.anims.generateFrameNumbers('player', {
+            frame: this.anims.generateFrameNumbers("player", {
                 start: 0,
                 end: 3
             })
@@ -44,7 +44,7 @@ class bootloader extends Phaser.Scene {
         this.anims.create({
             key: 'up',
             frameRate: 10,
-            frame: this.anims.generateFrameNumbers('player', {
+            frame: this.anims.generateFrameNumbers("player", {
                 start: 10,
                 end: 12
             })
