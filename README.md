@@ -24,17 +24,22 @@
  ___
  ___
  
- #### Webs útiles:
+ ##### Webs útiles:
  
  - *Curso completo de edición de archivos CSS: https://www.w3schools.com/css/default.asp*
  - *Manual de uso de archivos JSON: https://www.json.org/json-es.html*
+ ___
+
+ #### GDD: Game Design Document / Documento de Diseño del Videojuego
+![Game Design Document][GDD en readme]
 
 [logo]: assets/img/adaptacion.png "Platero's Tale"
 [WEB]: https://acedpol.github.io/Proyecto_PVLI_/ "Web del Proyecto"
-[GDD]: https://acedpol.github.io/Proyecto_PVLI_/assets/documents/Platero%E2%80%99s%20Tale%20GDD%20v1.1.pdf "Enlace a la web (versión html)"
-[GDD en repo]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Platero%E2%80%99s%20Tale%20GDD%20v1.1.pdf "Link a la ubicación en el repositorio"
+[GDD]: http://127.0.0.1:5500/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
+[GDD en repo]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Link a la ubicación en el repositorio"
 [Pivotal Tracker]: https://www.pivotaltracker.com/n/projects/2474691 "Herramienta de gestión del Proyecto"
 [Arquitectura antigua]: https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=Arquitectura%20Platero%20y%20Yo#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1B3NTcCrNRc7D7IHi2svY9JxskboJyzo2%26export%3Ddownload "Visualizador web"
 [Nueva Arquitectura]: https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=ArquitecturaPlaterosTale.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1fdzaqrhfvPPrEq2kRV5FCk7kSp_H8JpD%26export%3Ddownload "Visualizador web"
-[PNG Arquitectura antigua]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/Arquitectura%20Platero%20y%20Yo.png?raw=true
-[PNG Nueva Arquitectura]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/ArquitecturaPlaterosTale.png?raw=true
+[PNG Arquitectura antigua]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/Arquitectura%20Platero%20y%20Yo.png
+[PNG Nueva Arquitectura]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/ArquitecturaPlaterosTale_1.1.png
+[GDD en readme]: assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Game Design Document"
