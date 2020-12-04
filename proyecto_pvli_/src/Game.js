@@ -1,9 +1,9 @@
-import Player from './Player.js';
+import Player from './player.js';
 
 
-export default class Game extends Phaser.Scene {
+export default class game extends Phaser.Scene {
   constructor() {
-    super({ key: "Game" });
+    super({ key: "game" });
   }
   preload() {}
 

@@ -1,5 +1,5 @@
-import Game from './Game.js';
-import Bootloader from './Bootloader.js';
+import game from './game.js';
+import bootloader from './bootloader.js';
 
 const config = {
     title: "proyecto_pvli_", //
@@ -23,7 +23,7 @@ const config = {
         default: "arcade",
         "arcade": { debug: false } 
     },
-    scene: [Bootloader, Game]
+    scene: [bootloader, game]
 };
 
 new Phaser.Game(config);

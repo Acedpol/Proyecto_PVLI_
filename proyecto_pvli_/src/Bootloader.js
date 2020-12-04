@@ -1,6 +1,6 @@
-class Bootloader extends Phaser.Scene {
+class bootloader extends Phaser.Scene {
     constructor() {
-        super({ key:"Bootloader" }); 
+        super({ key:"bootloader" }); 
     }
 
     preload() {
@@ -50,7 +50,7 @@ class Bootloader extends Phaser.Scene {
             })
             });
 
-        this.scene.start('Game');
+        this.scene.start('game');
     }
 }
-export default Bootloader;
+export default bootloader;
