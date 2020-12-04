@@ -5,8 +5,6 @@
  ___
  #### Proyecto desarrollado por: _Generation Games (GG)_
  ___
- ![Imagen de JRJ con su burrito][logo]
- ___
  #### IMPORTANTE:
  - En la carpeta **_proyect_pvli__** se encuentran los archivos que componen el videojuego.
  - Contiene su propio _readme_ con información relevante para su uso.
@@ -20,14 +18,15 @@
  ###### Arquitectura Antigua: [Diagrama: Platero y Yo (on-line)][Arquitectura antigua] - [Formato PNG][PNG Arquitectura antigua]
 
  ###### Nueva Arquitectura en proceso: [Diagrama: Platero's Tale (on-line)][Nueva Arquitectura] - [Formato PNG][PNG Nueva Arquitectura]
- 
  ___
+ ![Imagen de JRJ con su burrito][logo]
  ___
  
  ##### Webs útiles:
  
- - *Curso completo de edición de archivos CSS: https://www.w3schools.com/css/default.asp*
- - *Manual de uso de archivos JSON: https://www.json.org/json-es.html*
+ - Curso completo de edición de archivos CSS: https://www.w3schools.com/css/default.asp
+ - Manual de uso de archivos JSON: https://www.json.org/json-es.html
+ ___
  ___
 
  #### GDD: Game Design Document / Documento de Diseño del Videojuego
