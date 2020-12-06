@@ -8,6 +8,7 @@ class bootloader extends Phaser.Scene {
         this.load.setPath('./assets/images');
 
         this.load.image('burro', 'Platero.png');
+        this.load.image('live','live.png');
 
         this.load.spritesheet("player", 'Player.png', {frameWidth: 48, frameHeight: 48, end: 12});
 

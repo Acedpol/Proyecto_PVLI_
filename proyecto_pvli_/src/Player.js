@@ -9,6 +9,8 @@ export default class player extends Phaser.GameObjects.Sprite {
       this.cursors = this.scene.input.keyboard.createCursorKeys();
       this.health = 100;
       this.lives = 3;
+      this.x=x;
+      this.y=y;
     }
     
 
