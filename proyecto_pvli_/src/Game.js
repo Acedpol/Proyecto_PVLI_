@@ -17,6 +17,6 @@ export default class game extends Phaser.Scene {
   }
 
   update(time, delta) {
-
+    
   }
 }
