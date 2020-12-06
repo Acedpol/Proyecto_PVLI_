@@ -14,6 +14,7 @@ export default class game extends Phaser.Scene {
     this.live=new health(this,this.player.x,this.player.y-30,"live");
     this.cameras.main.startFollow(this.player);
     this.physics.add.collider(this.player);
+
   }
 
   update(time, delta) {

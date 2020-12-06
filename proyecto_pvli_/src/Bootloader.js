@@ -10,8 +10,8 @@ class bootloader extends Phaser.Scene {
         this.load.image('burro', 'Platero.png');
         this.load.image('live','live.png');
 
-        this.load.spritesheet("player", 'Player.png', {frameWidth: 48, frameHeight: 48, end: 12});
-
+        this.load.spritesheet("player", 'PlayerSheet.png', {frameWidth: 47, frameHeight: 42 });
+        
         this.load.on('complete', () => {
             console.log('Load complete');
         });
@@ -19,38 +19,45 @@ class bootloader extends Phaser.Scene {
 
     create() { 
         this.anims.create({
+            key: 'standby',
+            frameRate: 1,
+            frames: this.anims.generateFrameNumbers("player", {
+                start: 0,
+                end: 0
+            })
+            });
+        this.anims.create({
             key: 'left',
-            frameRate: 10,
-            frame: this.anims.generateFrameNumbers("player", {
-                start: 4,
-                end: 6
+            frameRate: 3,
+            frames: this.anims.generateFrameNumbers("player", {
+                start: 3,
+                end: 5
             })
             });
         this.anims.create({
             key: 'right',
-            frameRate: 10,
-            frame: this.anims.generateFrameNumbers("player", {
-                start: 7,
-                end: 9
+            frameRate: 3,
+            frames: this.anims.generateFrameNumbers("player", {
+                start: 6,
+                end: 8
             })
             });
         this.anims.create({
             key: 'down',
-            frameRate: 10,
-            frame: this.anims.generateFrameNumbers("player", {
+            frameRate: 3,
+            frames: this.anims.generateFrameNumbers("player", {
                 start: 0,
-                end: 3
+                end: 2
             })
             });
         this.anims.create({
             key: 'up',
-            frameRate: 10,
-            frame: this.anims.generateFrameNumbers("player", {
-                start: 10,
-                end: 12
+            frameRate: 3,
+            frames: this.anims.generateFrameNumbers("player", {
+                start: 9,
+                end: 11
             })
             });
-
         this.scene.start('game');
     }
 }

@@ -14,26 +14,45 @@ export default class player extends Phaser.GameObjects.Sprite {
     }
     
 
-    preUpdate() {
-        super.preUpdate()
+    preUpdate(time, delta) {
+        super.preUpdate(time, delta);
+
         if(this.cursors.up.isDown) {
             this.body.setVelocityY(-this.speed);
-            //this.play('up', true);
         }
         if(this.cursors.down.isDown) {
             this.body.setVelocityY(this.speed);
-            //this.play('down', true);
         }
         if(this.cursors.right.isDown) {
             this.body.setVelocityX(this.speed);
-            //this.play('right', true);
         }
         if(this.cursors.left.isDown) {
             this.body.setVelocityX(-this.speed);
-            //this.play('left', true);
         }
         if(this.cursors.left.isUp && this.cursors.right.isUp) this.body.setVelocityX(0);
         if(this.cursors.up.isUp && this.cursors.down.isUp) this.body.setVelocityY(0);
+
+        let [velocityX, velocityY] = [this.body.velocity.x, this.body.velocity.y];
+
+        this.animations(velocityX, velocityY);
+
+        
+    }
+
+    animations(velocityX, velocityY){
+        if(velocityX === 0) {
+            if(velocityY === 0) {
+                this.off('down', () => { this.anims.play('down', false, 2); });
+                this.off('up', () => { this.anims.play('up', false, 2)});
+                this.off('right', () => { this.anims.play('right', false, 2)});
+                this.off('left', () => { this.anims.play('left', false, 2)});
+            }
+            else if(velocityY > 0) this.anims.play('down', true);
+            else if (velocityY < 0) this.anims.play('up', true); 
+        }
+        if(velocityX > 0) this.anims.play('right', true);
+        else if(velocityX < 0) this.anims.play('left', true);
+
     }
   }
   
