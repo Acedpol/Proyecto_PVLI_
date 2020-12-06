@@ -7,3 +7,8 @@ export default class enemy extends Phaser.GameObjects.Sprite {
       this.speed = 300;
       this.area = 200;
     }
+
+    move(){
+        
+    }
+}
