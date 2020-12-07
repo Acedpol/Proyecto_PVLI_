@@ -1,5 +1,5 @@
-import game from './game.js';
 import bootloader from './bootloader.js';
+import game from './game.js';
 
 const config = {
     title: "proyecto_pvli_", //
