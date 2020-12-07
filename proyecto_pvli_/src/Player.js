@@ -54,4 +54,5 @@ export default class player extends Phaser.GameObjects.Sprite {
         else if(velocityX < 0) this.anims.play('left', true);
 
     }
-  }  
+  }
+  
