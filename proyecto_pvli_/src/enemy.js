@@ -9,3 +9,4 @@ export default class enemy extends Phaser.GameObjects.Sprite {
     }
     
   }
+  
