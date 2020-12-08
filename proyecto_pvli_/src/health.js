@@ -8,8 +8,7 @@ export default class health extends Phaser.GameObjects.Sprite {
       this.wi=this.scene.player.health;
       this.displayHeight=5;
       this.x=this.x-(this.wi/2);
-      this.scene.add.existing(this);
-      
+      this.scene.add.existing(this);      
     }
     preUpdate(){
         this.x=this.scene.player.x-(this.wi/2);
