@@ -11,23 +11,25 @@ export default class player extends Phaser.GameObjects.Sprite {
       this.lives = 3;
       this.x=x;
       this.y=y;
+      this.pause = false;
     }
     
 
     preUpdate(time, delta) {
         super.preUpdate(time, delta);
-
-        if(this.cursors.up.isDown) {
-            this.body.setVelocityY(-this.speed);
-        }
-        if(this.cursors.down.isDown) {
-            this.body.setVelocityY(this.speed);
-        }
-        if(this.cursors.right.isDown) {
-            this.body.setVelocityX(this.speed);
-        }
-        if(this.cursors.left.isDown) {
-            this.body.setVelocityX(-this.speed);
+        if(!this.pause){
+            if(this.cursors.up.isDown) {
+                this.body.setVelocityY(-this.speed);
+            }
+            if(this.cursors.down.isDown) {
+                this.body.setVelocityY(this.speed);
+            }
+            if(this.cursors.right.isDown) {
+                this.body.setVelocityX(this.speed);
+            }
+            if(this.cursors.left.isDown) {
+                this.body.setVelocityX(-this.speed);
+            }
         }
         if(this.cursors.left.isUp && this.cursors.right.isUp) this.body.setVelocityX(0);
         if(this.cursors.up.isUp && this.cursors.down.isUp) this.body.setVelocityY(0);
@@ -53,6 +55,12 @@ export default class player extends Phaser.GameObjects.Sprite {
         if(velocityX > 0) this.anims.play('right', true);
         else if(velocityX < 0) this.anims.play('left', true);
 
+    }
+
+    pausePlayer(){
+        this.pause = !this.pause;
+        this.body.setVelocityX(0);
+        this.body.setVelocityY(0);
     }
   }
   
