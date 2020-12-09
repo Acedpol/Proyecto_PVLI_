@@ -1,5 +1,6 @@
 import player from './player.js';
 import health from './health.js';
+import pausemenu from './pausemenu.js';
 
 export default class game extends Phaser.Scene {
   constructor() {
@@ -14,19 +15,18 @@ export default class game extends Phaser.Scene {
     this.live = new health(this,this.player.x,this.player.y-30,"live");
     this.cameras.main.startFollow(this.player);
     this.physics.add.collider(this.player);
+    this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
+    this.pausemenu.scale = 0.8;
     
-    this.pause = false;
-    this.input.keyboard.addKey('ESC').on('down', event => { this.pauseFunction() });
+    this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
   }
 
   update(time, delta) {
     
   }
 
-  pauseFunction(){
-    this.pause = !this.pause;
+  pause(){
+    this.pausemenu.openBook();
     this.player.pausePlayer();
-    if(this.pause) console.log('game paused');
-    else console.log('game resumed');
   }
 }

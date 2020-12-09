@@ -9,6 +9,7 @@ class bootloader extends Phaser.Scene {
 
         this.load.image('burro', 'Platero.png');
         this.load.image('live','live.png');
+        this.load.image('libro', 'book.png');
 
         this.load.spritesheet("player", 'PlayerSheet.png', {frameWidth: 47, frameHeight: 42 });
         
