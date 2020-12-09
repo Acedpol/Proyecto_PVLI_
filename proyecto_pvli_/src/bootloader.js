@@ -16,6 +16,8 @@ class bootloader extends Phaser.Scene {
         this.load.on('complete', () => {
             console.log('Load complete');
         });
+
+        
     }
 
     create() { 
