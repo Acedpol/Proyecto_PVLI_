@@ -10,16 +10,20 @@ export default class game extends Phaser.Scene {
   preload() {}
 
   create() {
+    this.mapa = new map(this, "Superficie", "Muebles", 'Hogar', 'tilemap');
     this.player = new player(this, 300, 200, "player");
     this.live = new health(this,0,25,"live");
     this.cameras.main.startFollow(this.player);
+    this.cameras.main.zoom = 2;
     this.physics.add.collider(this.player);
     //this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
     //this.pausemenu.scale = 0.8;
     
+    this.physics.add.collider(this.player, this.mapa.groundLayer);
+
     this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
 
-    this.mapa = new map(this);
+    
   }
 
   update(time, delta) {
