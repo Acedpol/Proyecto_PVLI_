@@ -1,5 +1,5 @@
-//import bootloader from './bootloader.js';
-//import game from './game.js';
+import bootloader from './bootloader.js';
+import game from './game.js';
 import map from './map.js';
 
 const config = {
@@ -24,7 +24,7 @@ const config = {
         default: "arcade",
         "arcade": { debug: false } 
     },
-    scene: [map]
+    scene: [bootloader, game]
 };
 
 new Phaser.Game(config);
