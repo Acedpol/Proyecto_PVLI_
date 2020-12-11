@@ -1,4 +1,11 @@
 { "compressionlevel":-1,
+ "editorsettings":
+    {
+     "export":
+        {
+         "target":"."
+        }
+    },
  "height":22,
  "infinite":false,
  "layers":[
@@ -34,12 +41,21 @@
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"2020.11.25",
+ "tiledversion":"1.4.3",
  "tileheight":16,
  "tilesets":[
         {
+         "columns":29,
          "firstgid":1,
-         "source":"tileset.json"
+         "image":"tileset.png",
+         "imageheight":464,
+         "imagewidth":464,
+         "margin":0,
+         "name":"tileset",
+         "spacing":0,
+         "tilecount":841,
+         "tileheight":16,
+         "tilewidth":16
         }],
  "tilewidth":16,
  "type":"map",
