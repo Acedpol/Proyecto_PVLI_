@@ -7,6 +7,7 @@ export default class player extends Phaser.GameObjects.Sprite {
       this.body.setCollideWorldBounds();
       this.body.setSize(this.width / 1.5, this.height, true);
       this.speed = 300;
+      this.body.setMaxSpeed(this.speed);
       this.cursors = this.scene.input.keyboard.createCursorKeys();
       this.health = 100;
       this.lives = 3;
