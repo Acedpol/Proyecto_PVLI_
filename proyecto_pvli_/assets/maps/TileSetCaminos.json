@@ -1,0 +1,15 @@
+{ "columns":6,
+ "image":"tileset2.png",
+ "imageheight":96,
+ "imagewidth":96,
+ "margin":0,
+ "name":"TileSetCaminos",
+ "spacing":0,
+ "tilecount":36,
+ "tiledversion":"1.4.3",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#000000",
+ "type":"tileset",
+ "version":1.4
+}
