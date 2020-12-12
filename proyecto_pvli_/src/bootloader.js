@@ -13,9 +13,9 @@ class bootloader extends Phaser.Scene {
 
         this.load.spritesheet("player", 'PlayerSheet.png', {frameWidth: 47, frameHeight: 42 });
 
-        this.load.setPath('./assets');
-        this.load.tilemapTiledJSON('Hogar', '/maps/Hogar.json');
-        this.load.image('tilemap', '/maps/tileset.png');
+        this.load.setPath('./assets/maps/hogar');
+        this.load.tilemapTiledJSON('Hogar', 'Hogar.json');
+        this.load.image('tilemap', 'tileset.png');
         
         this.load.on('complete', () => {
             console.log('Load complete');

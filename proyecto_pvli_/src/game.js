@@ -20,7 +20,7 @@ export default class game extends Phaser.Scene {
     this.pausemenu.scale = 0.8;
     this.live = new health(this,0,25,"live");
 
-    this.cameras.main.zoom = 2; 
+    // this.cameras.main.zoom = 2; 
     // agregado de colisiones del mapa al jugador:
     this.physics.add.collider(this.player, this.groundLayer);
     this.physics.add.collider(this.player, this.immovableLayer); 
