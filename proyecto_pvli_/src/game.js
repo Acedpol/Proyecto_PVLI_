@@ -1,7 +1,6 @@
 import player from './player.js';
 import health from './health.js';
 //import pausemenu from './pausemenu.js';
-import map from './map.js';
 
 export default class game extends Phaser.Scene {
   constructor() {
@@ -10,16 +9,16 @@ export default class game extends Phaser.Scene {
   preload() {}
 
   create() {
-    this.mapa = new map(this, "Superficie", "Muebles", 'Hogar', 'tilemap');
+    this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
     this.player = new player(this, 300, 200, "player");
     this.live = new health(this,0,25,"live");
     this.cameras.main.startFollow(this.player);
     this.cameras.main.zoom = 2;
-    this.physics.add.collider(this.player);
+    this.physics.add.collider(this.player, this.groundLayer);
+    this.physics.add.collider(this.player, this.immovableLayer);
     //this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
     //this.pausemenu.scale = 0.8;
     
-    this.physics.add.collider(this.player, this.mapa.groundLayer);
 
     this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
 
@@ -33,5 +32,19 @@ export default class game extends Phaser.Scene {
   pause(){
     this.pausemenu.openBook();
     this.player.pausePlayer();
+  }
+
+  createMap(layer1, layer2, keyMap, tileMap){
+    this.map = this.make.tilemap({ 
+      key: keyMap, 
+      tileWidth: 16, 
+      tileHeight: 16 
+  });
+    const tileset = this.map.addTilesetImage('tileset', tileMap);
+    this.groundLayer = this.map.createStaticLayer(layer1, [tileset]);
+    this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
+
+    this.groundLayer.setCollisionByProperty({collider : true});
+    this.immovableLayer.setCollisionBetween(1, 999, true);
   }
 }

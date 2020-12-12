@@ -1,6 +1,5 @@
 import bootloader from './bootloader.js';
 import game from './game.js';
-import map from './map.js';
 
 const config = {
     title: "proyecto_pvli_", //
@@ -14,7 +13,7 @@ const config = {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    backgroundColor: "#76C9F0", //
+    backgroundColor: "#000000", //
     // aspectos del juego
     pixelArt: true,
     input: {
