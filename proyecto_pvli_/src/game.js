@@ -16,6 +16,7 @@ export default class game extends Phaser.Scene {
     this.cameras.main.zoom = 2;
     this.physics.add.collider(this.player, this.groundLayer);
     this.physics.add.collider(this.player, this.immovableLayer);
+    this.immovableLayer.renderDebug(this.add.graphics());
     //this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
     //this.pausemenu.scale = 0.8;
     
@@ -41,10 +42,12 @@ export default class game extends Phaser.Scene {
       tileHeight: 16 
   });
     const tileset = this.map.addTilesetImage('tileset', tileMap);
-    this.groundLayer = this.map.createStaticLayer(layer1, [tileset]);
+    this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
     this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
 
     this.groundLayer.setCollisionByProperty({collider : true});
     this.immovableLayer.setCollisionBetween(1, 999, true);
+
+
   }
 }
