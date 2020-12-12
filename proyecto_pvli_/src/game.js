@@ -16,7 +16,7 @@ export default class game extends Phaser.Scene {
     this.cameras.main.zoom = 2;
     this.physics.add.collider(this.player, this.groundLayer);
     this.physics.add.collider(this.player, this.immovableLayer);
-    this.immovableLayer.renderDebug(this.add.graphics());
+    this.immovableLayer.renderDebug(this.add.graphics().setAlpha(0.40));
     //this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
     //this.pausemenu.scale = 0.8;
     
