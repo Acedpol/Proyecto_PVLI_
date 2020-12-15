@@ -2,6 +2,7 @@ import player from './player.js';
 import health from './health.js';
 import pausemenu from './pausemenu.js';
 import enemy from './enemy.js';
+import item from './item.js';
 
 export default class game extends Phaser.Scene {
   constructor() {
@@ -18,6 +19,8 @@ export default class game extends Phaser.Scene {
     this.physics.add.collider(this.player,this.enemy);
     this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
     this.live = new health(this,0,25,"live");
+
+    this.item = new item(this, 300, 150, 'items', 18);
 
     // this.cameras.main.zoom = 2; 
     // agregado de colisiones del mapa al jugador:

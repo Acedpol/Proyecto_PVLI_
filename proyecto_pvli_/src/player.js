@@ -14,6 +14,7 @@ export default class player extends Phaser.GameObjects.Sprite {
       this.x=x;
       this.y=y;
       this.pause = false;
+      this.setDepth(1);
     }
     
 
