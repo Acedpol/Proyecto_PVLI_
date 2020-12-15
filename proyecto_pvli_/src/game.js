@@ -13,7 +13,7 @@ export default class game extends Phaser.Scene {
     this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
     this.player = new player(this, 300, 200, "player");
     
-    this.enemy=new enemy(this,400,150,"player",1);
+    this.enemy=new enemy(this,400,150,"player",0);
     this.cameras.main.startFollow(this.player);
     this.physics.add.collider(this.player,this.enemy);
     this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
