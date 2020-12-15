@@ -9,7 +9,7 @@ const config = {
     scale: {
         parent: "container",
         width: 1400,
-        height: 800,
+        height: 660,
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
