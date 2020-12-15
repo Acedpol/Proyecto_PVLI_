@@ -7,13 +7,18 @@ export default class enemy extends Phaser.GameObjects.Sprite {
       this.body.setCollideWorldBounds();
       this.speed = 300;
       this.area = 200;
+      this.pause = false;
     }
     preUpdate(){
       this.quitaVida();
     }
     quitaVida(){
-      if(this.scene.player.y<this.y+this.area && this.scene.player.y>this.y && this.scene.player.x>this.x-5&&this.scene.player.x<this.x+5){
+      if(!this.pause && this.scene.player.y<this.y+this.area && this.scene.player.y>this.y && this.scene.player.x>this.x-20&&this.scene.player.x<this.x+20){
         this.scene.player.health--;
       }
     }
+    
+    pauseEnemy(){
+      this.pause = !this.pause;
+  }
  }
