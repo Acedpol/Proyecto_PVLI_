@@ -40,8 +40,8 @@
 ![Página 07 - Game Design Document][GDD_07]
 ![Página 08 - Game Design Document][GDD_08]
 
-[logo]: assets/img/adaptacion.png "Platero's Tale"
-[WEB]: https://acedpol.github.io/Proyecto_PVLI_/ "Web del Proyecto"
+[logo]: assets/images/adaptacion.png "Platero's Tale"
+[WEB]: https://acedpol.github.io/Proyecto_PVLI_/index.html "Web del Proyecto"
 [GDD]: http://acedpol.github.io/Proyecto_PVLI_/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
 [GDD en repo]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Link a la ubicación en el repositorio"
 [Pivotal Tracker]: https://www.pivotaltracker.com/n/projects/2474691 "Herramienta de gestión del Proyecto"
