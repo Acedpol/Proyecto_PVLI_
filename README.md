@@ -8,6 +8,7 @@
  #### IMPORTANTE:
  - En la carpeta **_proyect_pvli__** se encuentran los archivos que componen el videojuego.
  - Contiene su propio _readme_ con información relevante para su uso.
+ - En la carpeta **_assets_** se encuentran los archivos que componen el videojuego.
  
  ###### website: [visitar web][WEB]
 
