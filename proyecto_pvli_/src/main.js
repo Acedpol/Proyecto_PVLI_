@@ -8,10 +8,10 @@ const config = {
     // ventana del juego
     scale: {
         parent: "container",
-        width: 1400,
-        height: 660,
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH
+        width: 1280,
+        height: 720,
+        mode: Phaser.Scale.ENVELOP,
+        autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
     },
     backgroundColor: "#000000", //
     // aspectos del juego

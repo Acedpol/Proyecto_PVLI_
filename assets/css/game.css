@@ -1,0 +1,50 @@
+@font-face { font-family: 'Noto Sans'; font-weight: 700; font-style: normal; src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot"); src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold"), local("Noto-Sans-700"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff2") format("woff2"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff") format("woff"), url("../fonts/Noto-Sans-700/Noto-Sans-700.ttf") format("truetype"), url("../fonts/Noto-Sans-700/Noto-Sans-700.svg#NotoSans") format("svg"); }
+
+h1 { color:#000000; text-align: center; margin: 0 0 20px; }
+
+body { background-color:#ffffff; margin-top: 65px; font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000000; }
+
+a { text-decoration: none; }
+
+strong { color: #000000; }
+
+div#container {
+  display: block;
+  max-width: 85%;
+  max-height: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  position: static;
+}
+
+/*Añadido para barra superior de cambio de menú*/
+.boton {
+    border: 3px solid #ffffff; /*anchura, estilo y color borde*/
+    padding: 6px; /*espacio alrededor texto*/
+    background-color:#ffffff; /*color botón*/
+    font-size:15px; /*tamaño texto*/
+    border-radius:20px; /*bordes redondos*/
+    margin-right:10px; /*separación entre botones*/    
+    transition-duration: 0.3s;
+    position:relative;
+    top:12px;
+    }
+  .boton:hover {
+    background-color:#76C9F0;
+    }
+  div#header {
+    display: block;
+    padding: 5px;
+    text-align: right;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:48px;
+    background-color: #233C47;
+  }  
+  @media screen {
+   div#header {
+    position: fixed;
+   }
+  }
