@@ -6,6 +6,7 @@ export default class pausemenu extends Phaser.GameObjects.Sprite {
       this.scale = 0.5;
       this.setVisible(false);
       this.cursors = this.scene.input.keyboard.createCursorKeys();
+      this.setDepth(2);
     }
     
     preUpdate(time, delta){
