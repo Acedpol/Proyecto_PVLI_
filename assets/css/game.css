@@ -2,7 +2,7 @@
 
 h1 { color:#000000; text-align: center; margin: 0 0 20px; }
 
-body { background-color:#ffffff; margin-top: 65px; font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000000; }
+body { background-color:#ffffff; margin-top: 65px; max-height: 90%; font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000000; }
 
 a { text-decoration: none; }
 
@@ -15,6 +15,14 @@ div#container {
   margin-left: auto;
   margin-right: auto;
   position: static;
+}
+
+footer {
+  width:270px;
+  float:left;
+  position:fixed;
+  bottom:50px;
+  -webkit-font-smoothing:subpixel-antialiased;
 }
 
 /*Añadido para barra superior de cambio de menú*/
