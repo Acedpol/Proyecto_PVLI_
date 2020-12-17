@@ -31,8 +31,18 @@
  "tileheight":16,
  "tilesets":[
         {
+         "columns":6,
          "firstgid":1,
-         "source":"TileSetCaminos.json"
+         "image":"tileset2.png",
+         "imageheight":96,
+         "imagewidth":96,
+         "margin":0,
+         "name":"TileSetCaminos",
+         "spacing":0,
+         "tilecount":36,
+         "tileheight":16,
+         "tilewidth":16,
+         "transparentcolor":"#000000"
         }],
  "tilewidth":16,
  "type":"map",
