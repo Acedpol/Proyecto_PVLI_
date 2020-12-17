@@ -20,12 +20,14 @@ export default class game extends Phaser.Scene {
     this.physics.add.collider(this.player,this.enemy);
     this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
     this.live = new health(this,0,25,"live");
+    
+    this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
     this.item = new item(this, 300, 150, 'items', 18);
 
     // this.cameras.main.zoom = 1; 
     // agregado de colisiones del mapa al jugador:
-    // this.physics.add.collider(this.player, this.groundLayer);
+    this.physics.add.collider(this.player, this.groundLayer);
     // this.physics.add.collider(this.player, this.immovableLayer); 
     // this.debugCollisionsMapa();
 
@@ -55,9 +57,11 @@ export default class game extends Phaser.Scene {
     this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
     // this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
     // // definición de colisiones:
-    // this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
+     this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
     // this.immovableLayer.setCollisionByProperty({collider : true});
-    // ----------- this.immovableLayer.setCollisionBetween(1, 999, true); -> con indices    
+    // ----------- this.immovableLayer.setCollisionBetween(1, 999, true); -> con indices   
+    
+    
   }
 
   // render / debug de las colisiones en el mapa
