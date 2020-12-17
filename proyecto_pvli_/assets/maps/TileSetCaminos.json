@@ -1,4 +1,12 @@
 { "columns":6,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"",
+         "target":"."
+        }
+    },
  "image":"tileset2.png",
  "imageheight":96,
  "imagewidth":96,
@@ -6,7 +14,7 @@
  "name":"TileSetCaminos",
  "spacing":0,
  "tilecount":36,
- "tiledversion":"1.4.3",
+ "tiledversion":"2020.11.25",
  "tileheight":16,
  "tilewidth":16,
  "transparentcolor":"#000000",
