@@ -2,7 +2,7 @@
 
 h1 { color:#000000; text-align: center; margin: 0 0 20px; }
 
-body { overflow: auto; margin: auto; padding-top: 58px; max-height: 90%; font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000000; }
+body { overflow: hidden; margin: auto; padding-top: 58px; max-height: 90%; font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000000; }
 
 a { text-decoration: none; }
 
@@ -24,7 +24,7 @@ div#container {
     background-color:#ffffff; /*color botón*/
     font-size:15px; /*tamaño texto*/
     border-radius:20px; /*bordes redondos*/
-    margin-right:10px; /*separación entre botones*/    
+    margin-right:10px; /*separación entre botones */
     transition-duration: 0.3s;
     position:relative;
     top:12px;
@@ -35,7 +35,7 @@ div#container {
   div#header {
     display: block;
     padding: 5px;
-    text-align: right;
+    text-align: center;
     position:absolute;
     top:0;
     left:0;

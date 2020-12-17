@@ -256,7 +256,7 @@ footer { width: 270px; float: left; position: static; }
 div#header {
   display: block;
   padding: 5px;
-  text-align: right;
+  text-align: center;
   position:absolute;
   top:0;
   left:0;
