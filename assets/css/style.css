@@ -270,6 +270,10 @@ div#header {
  }
 }
 
+@media print, screen and (min-width: 960px) {
+  div#header { text-align: right; }
+}
+
 .column {
   float: left;
   width: 33.33%;

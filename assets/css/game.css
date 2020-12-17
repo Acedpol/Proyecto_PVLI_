@@ -48,3 +48,7 @@ div#container {
     position: fixed;
    }
   }
+
+  @media print, screen and (min-width: 960px) {
+    div#header { text-align: right; }
+  }
