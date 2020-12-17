@@ -9,14 +9,15 @@ export default class game extends Phaser.Scene {
   preload() {}
 
   create() {
-    this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
+    // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
+    this.createMap("Superficie", "Muebles", 'Nivel', 'tilemap');
     this.player = new player(this, 300, 200, "player");
     this.live = new health(this,0,25,"live");
     this.cameras.main.startFollow(this.player);
     this.cameras.main.zoom = 2;   
     // agregado de colisiones del mapa al jugador:
-    this.physics.add.collider(this.player, this.groundLayer);
-    this.physics.add.collider(this.player, this.immovableLayer); 
+    // this.physics.add.collider(this.player, this.groundLayer);
+    // this.physics.add.collider(this.player, this.immovableLayer); 
     // this.debugCollisionsMapa();
 
     //this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
@@ -45,11 +46,11 @@ export default class game extends Phaser.Scene {
     });
     // creación de layers:
     const tileset = this.map.addTilesetImage('tileset', tileMap);
-    this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
-    this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
-    // definición de colisiones:
-    this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
-    this.immovableLayer.setCollisionByProperty({collider : true});
+    this.groundLayer = this.map.createStaticLayer(layer1, [tileset]);
+    // this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
+    // // definición de colisiones:
+    // this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
+    // this.immovableLayer.setCollisionByProperty({collider : true});
     // ----------- this.immovableLayer.setCollisionBetween(1, 999, true); -> con indices    
   }
 
