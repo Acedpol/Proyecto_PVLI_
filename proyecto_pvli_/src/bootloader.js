@@ -20,7 +20,7 @@ class bootloader extends Phaser.Scene {
 
         this.load.setPath('./assets/maps/nivel_01');
         this.load.tilemapTiledJSON('Nivel', 'Nivel.json');
-        this.load.image('tilemap', 'tileset2.png');
+        this.load.image('tilemap', 'tileset3.png');
         
         this.load.on('complete', () => {
             console.log('Load complete');

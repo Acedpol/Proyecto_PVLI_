@@ -33,12 +33,12 @@
         {
          "columns":6,
          "firstgid":1,
-         "image":"tileset2.png",
-         "imageheight":96,
-         "imagewidth":96,
-         "margin":0,
+         "image":"tileset3.png",
+         "imageheight":108,
+         "imagewidth":108,
+         "margin":1,
          "name":"TileSetCaminos",
-         "spacing":0,
+         "spacing":2,
          "tilecount":36,
          "tileheight":16,
          "tiles":[

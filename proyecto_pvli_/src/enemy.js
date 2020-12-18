@@ -32,7 +32,7 @@ export default class enemy extends Phaser.GameObjects.Sprite {
       this.quitaVida();
       this.changeDirection();
       this.move();
-      console.log(this.scene.player.health);
+      //console.log(this.scene.player.health);
     }
     
     changeDirection(){

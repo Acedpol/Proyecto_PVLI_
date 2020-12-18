@@ -53,7 +53,7 @@ export default class game extends Phaser.Scene {
       tileHeight: 16 
     });
     // creación de layers:
-    const tileset = this.map.addTilesetImage('TileSetCaminos', tileMap);
+    const tileset = this.map.addTilesetImage('TileSetCaminos', tileMap, 16, 16, 1, 2);
     this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
     // this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
     // // definición de colisiones:
