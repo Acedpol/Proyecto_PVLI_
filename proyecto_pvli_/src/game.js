@@ -13,19 +13,19 @@ export default class game extends Phaser.Scene {
   create() {
     // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
     this.createMap("Superficie", "Muebles", 'Nivel', 'tilemap');
-    this.player = new player(this, 300, 200, "player");
+    this.player = new player(this, 300, 2000, "player");
     
     this.enemy=new enemy(this,400,150,"player",0,0,0);
     this.cameras.main.startFollow(this.player);
     this.physics.add.collider(this.player,this.enemy);
-    this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro")
-    this.live = new health(this,0,25,"live");
+    this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro");
+    this.live = new health(this,320,190,"live");
     
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
     this.item = new item(this, 300, 150, 'items', 18);
 
-    // this.cameras.main.zoom = 1; 
+    this.cameras.main.zoom = 2; 
     // agregado de colisiones del mapa al jugador:
     this.physics.add.collider(this.player, this.groundLayer);
     // this.physics.add.collider(this.player, this.immovableLayer); 
@@ -53,7 +53,7 @@ export default class game extends Phaser.Scene {
       tileHeight: 16 
     });
     // creación de layers:
-    const tileset = this.map.addTilesetImage('TileSetCaminos', tileMap, 16, 16, 1, 2);
+    const tileset = this.map.addTilesetImage('TileSetCaminos', tileMap);
     this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
     // this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
     // // definición de colisiones:
