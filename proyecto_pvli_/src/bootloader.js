@@ -16,9 +16,9 @@ class bootloader extends Phaser.Scene {
         this.load.spritesheet("enemy", 'EnemySheet.png', {frameWidth: 47, frameHeight: 42 });
         this.load.spritesheet('items', 'Items.png', {frameWidth: 16, frameHeight: 16});
 
-        // this.load.setPath('./assets/maps/hogar');
-        // this.load.tilemapTiledJSON('Hogar', 'Hogar.json');
-        // this.load.image('tilemap', 'tileset.png');
+        this.load.setPath('./assets/maps/hogar');
+        this.load.tilemapTiledJSON('Hogar', 'Hogar.json');
+        this.load.image('tilemapmenu', 'tileset2.png');
 
         this.load.setPath('./assets/maps/nivel_01');
         this.load.tilemapTiledJSON('Nivel', 'Nivel.json');
@@ -70,7 +70,7 @@ class bootloader extends Phaser.Scene {
                 end: 11
             })
             });
-        this.scene.start('game');
+        this.scene.start('menu');
     }
 }
 export default bootloader;
