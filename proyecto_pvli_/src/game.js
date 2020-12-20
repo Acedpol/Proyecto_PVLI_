@@ -11,6 +11,7 @@ export default class game extends Phaser.Scene {
   preload() {}
 
   create() {
+    this.cameras.main.fadeIn(1000);
     // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
     this.createMap("Superficie", "Muebles", 'Nivel', 'tilemap');
     this.player = new player(this, 300, 2000, "player");

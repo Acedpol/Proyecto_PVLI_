@@ -8,7 +8,10 @@ export default class menu extends Phaser.Scene {
   }
   preload() {}
 
+  
+
   create() {
+    this.cameras.main.fadeIn(1000);
     this.createMap("Superficie", "Muebles", 'Hogar', 'tilemapmenu');
     this.player = new player(this, (this.map.tileWidth * this.map.width) / 2, (this.map.tileHeight * this.map.height) / 2, "player");
 
@@ -25,7 +28,9 @@ export default class menu extends Phaser.Scene {
     this.physics.add.collider(this.player, this.groundLayer);
     this.physics.add.collider(this.player, this.immovableLayer); 
     // this.debugCollisionsMapa();
-
+    
+    this.contar = 0;
+    
     for (const object of this.map.getObjectLayer('ChangeSceneLayer').objects){
       if(object.name === 'Changer') {
         this.trigger = this.add.zone(object.x, object.y);
@@ -41,7 +46,9 @@ export default class menu extends Phaser.Scene {
 
   update(time, delta) {
     if(this.physics.overlap(this.player, this.trigger)) {
+      setTimeout(() => {
       this.scene.start(this.trigger.escena);
+    }, 500);
   }
     //console.log(this.player.health);
   }
@@ -71,8 +78,12 @@ export default class menu extends Phaser.Scene {
   }
 
   changeScene(escena){
+    
 
-    this.scene.start(escena);
+  }
+
+  contador(){
+    this.contar++;
   }
 
   // render / debug de las colisiones en el mapa
