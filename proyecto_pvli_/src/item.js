@@ -9,5 +9,7 @@ export default class item extends Phaser.GameObjects.Sprite {
       this.y = y;
       this.setPosition(this.x, this.y);
       this.setScale(this.width * 0.125, this.height * 0.125);
+      if(numItem === 18) this.id = 'pila';
+      else this.id === 'unknown';
     }
 }

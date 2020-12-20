@@ -24,7 +24,8 @@ export default class game extends Phaser.Scene {
     
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
-    this.item = new item(this, 300, 150, 'items', 18);
+    this.objects = this.physics.add.group({key: 'items', frameQuantity: 1});
+    this.objects.getChildren()[0] = new item(this, 400, 2000, 'items', 18);
 
     this.cameras.main.zoom = 2; 
     // agregado de colisiones del mapa al jugador:
@@ -33,10 +34,16 @@ export default class game extends Phaser.Scene {
     // this.debugCollisionsMapa();
 
     this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
+
+    // Coge objetos
+    this.physics.add.overlap(this.player, this.objects, (o1, o2) => { this.catchObject(o2) } );
+
+    // Inventario
+    this.contadorLlaves = 0;
+    this.contadorPilas = 0;
   }
 
   update(time, delta) {
-    
     //console.log(this.player.health);
   }
 
@@ -70,4 +77,17 @@ export default class game extends Phaser.Scene {
     this.immovableLayer.renderDebug(this.add.graphics().setAlpha(0.60));
     this.groundLayer.renderDebug(this.add.graphics().setAlpha(0.60));
   }
+
+  catchObject(obj){
+    if(obj.visible == true){
+      obj.setVisible(false);
+      if(obj.id === 'llave') this.contadorLlaves = this.contadorLlaves + 1;
+      if(obj.id  === 'pila') this.contadorPilas = this.contadorPilas + 1;
+    }
+
+  }
+
+  getLlaves(){ return this.contadorLlaves; }
+
+  getPilas(){ return this.contadorPilas; }
 }
