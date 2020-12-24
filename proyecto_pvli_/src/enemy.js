@@ -1,3 +1,4 @@
+//import zone from './zone.js';
 export default class enemy extends Phaser.GameObjects.Sprite {
   //dir=0->Abajo, dir=1->Arriba, dir=2->Izquierda, dir=3->Derecha
   //typeMov=0->horizontal, typeMov=1->vertical
@@ -24,12 +25,19 @@ export default class enemy extends Phaser.GameObjects.Sprite {
       this.typeMov=typeMov;
       this.x=x;
       this.y=y;
+     
+      /*this.zones = this.scene.physics.add.group({key:'zone', frameQuantity: 0});
+      this.zones.getChildren()[0] = new zone(this.scene,this,this.x,this.y, 'zone');*/
+
+      //this.zone=new zone(this.scene,this,this.x,this.y, this.texture2);
+
+      //this.scene.physics.add.overlap(this.scene.player,this.zones,this.quitaVida());
       
 
       
     }
     preUpdate(time,delta){
-      this.quitaVida();
+      //this.quitaVida();
       this.changeDirection();
       this.move();
       //console.log(this.scene.player.health);
@@ -65,7 +73,7 @@ export default class enemy extends Phaser.GameObjects.Sprite {
   }
     
     quitaVida(){
-        if(this.dir==0){
+        /*if(this.dir==0){
           if(!this.pause && this.scene.player.y<this.y+this.area && this.scene.player.y>this.y && this.scene.player.x>this.x-5&&this.scene.player.x<this.x+5){
             this.scene.player.health--;
            }
@@ -84,7 +92,8 @@ export default class enemy extends Phaser.GameObjects.Sprite {
           if(!this.pause &&this.scene.player.x<this.x+this.area && this.scene.player.x>this.x && this.scene.player.y>this.y-5&&this.scene.player.y<this.y+5){
             this.scene.player.health--;
            }
-        }
+        }*/
+        this.scene.player.health--;
       }
     
     

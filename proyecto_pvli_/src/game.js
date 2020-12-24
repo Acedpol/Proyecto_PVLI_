@@ -3,6 +3,7 @@ import health from './health.js';
 import pausemenu from './pausemenu.js';
 import enemy from './enemy.js';
 import item from './item.js';
+import zone from './zone.js'
 
 export default class game extends Phaser.Scene {
   constructor() {
@@ -16,7 +17,15 @@ export default class game extends Phaser.Scene {
     this.createMap("Superficie", "Muebles", 'Nivel', 'tilemap', 'ambiente'); 
     this.player = new player(this, 350, 2050, "player");
     
-    this.enemy=new enemy(this,400,150,"enemy",0,0,0);
+   // this.enemy=new enemy(this,400,150,"enemy",0,0,0,"zone");
+    this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
+    this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy', 0,0,0);
+
+    this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
+    this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone',20,1);
+
+    this.physics.add.overlap(this.player,this.zones,(o1, o2) => { this.quitaVida() });
+
     this.cameras.main.startFollow(this.player);
     
     this.physics.add.collider(this.player,this.enemy);
@@ -39,10 +48,12 @@ export default class game extends Phaser.Scene {
 
     // Coge objetos
     this.physics.add.overlap(this.player, this.objects, (o1, o2) => { this.catchObject(o2) } );
+    
 
     // Inventario
     this.contadorLlaves = 0;
     this.contadorPilas = 0;
+   
   }
 
   update(time, delta) {
@@ -82,6 +93,11 @@ export default class game extends Phaser.Scene {
     this.immovableLayer.renderDebug(this.add.graphics().setAlpha(0.60));
     this.groundLayer.renderDebug(this.add.graphics().setAlpha(0.60));
   }
+  quitaVida(){
+    this.player.health--;
+    console.log(this.player.health);
+  }
+
 
   catchObject(obj){
     if(obj.visible == true){
@@ -96,3 +112,4 @@ export default class game extends Phaser.Scene {
 
   getPilas(){ return this.contadorPilas; }
 }
+
