@@ -19,10 +19,10 @@ export default class game extends Phaser.Scene {
     
    // this.enemy=new enemy(this,400,150,"enemy",0,0,0,"zone");
     this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
-    this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy', 0,0,0);
+    this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy',0,100,1);
 
     this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
-    this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone',20,1);
+    this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone',20,this.enemies.getChildren()[0].dir);
 
     this.physics.add.overlap(this.player,this.zones,(o1, o2) => { this.quitaVida() });
 
