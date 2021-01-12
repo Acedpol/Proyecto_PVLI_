@@ -9,12 +9,12 @@ export default class game extends Phaser.Scene {
   constructor() {
     super({ key: "game" });
   }
-  preload() {}
+
 
   create() {
     this.cameras.main.fadeIn(1250);
     // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
-    this.createMap("Superficie", "Muebles", 'Nivel', 'tilemap', 'ambiente'); 
+    this.createMap("Superficie", "Muebles", 'MueblesFrente', 'Nivel', 'tilemap', 'ambiente'); 
     this.player = new player(this, 350, 2050, "player");
     
    // this.enemy=new enemy(this,400,150,"enemy",0,0,0,"zone");
@@ -22,7 +22,7 @@ export default class game extends Phaser.Scene {
     this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy',0,100,1);
 
     this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
-    this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone',20,this.enemies.getChildren()[0].dir);
+    this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone', 100, this.enemies.getChildren()[0].dir, 0);
 
     this.physics.add.overlap(this.player,this.zones,(o1, o2) => { this.quitaVida() });
 
@@ -30,7 +30,7 @@ export default class game extends Phaser.Scene {
     
     this.physics.add.collider(this.player,this.enemy);
     this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro");
-    this.live = new health(this,320,190,"live");
+    this.live = new health(this,320,190,"live").setDepth(3);
     
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
     this.cameras.main.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
@@ -71,7 +71,7 @@ export default class game extends Phaser.Scene {
     //this.enemy.pauseEnemy();
   }
 
-  createMap(layer1, layer2, keyMap, tileMap, tileZone){
+  createMap(layer1, layer2, layer3, keyMap, tileMap, tileZone){
     // creación del mapa:
     this.map = this.make.tilemap({ 
       key: keyMap, 
@@ -82,14 +82,12 @@ export default class game extends Phaser.Scene {
     const tileset = this.map.addTilesetImage('TileSetCaminos', tileMap);
     const tileset2 = this.map.addTilesetImage('Ambiente', tileZone);
     this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
-    this.immovableLayer = this.map.createStaticLayer(layer2, [tileset2]);
-    // this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
-    // definición de colisiones:
-     this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
-     this.immovableLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
-    // this.immovableLayer.setCollisionByProperty({collider : true});
-    //this.immovableLayer.setCollisionBetween(1, 3800, true); //-> con indices   
-    
+    this.immovableLayer = this.map.createStaticLayer(layer2, [tileset2]).setDepth(2);
+    this.backLayer = this.map.createStaticLayer(layer3, [tileset2]).setDepth(0);    
+    // // definición de colisiones:
+    this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
+    this.immovableLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
+    this.backLayer.setCollisionByProperty({collider : true});
     
   }
 
@@ -98,6 +96,7 @@ export default class game extends Phaser.Scene {
     this.immovableLayer.renderDebug(this.add.graphics().setAlpha(0.60));
     this.groundLayer.renderDebug(this.add.graphics().setAlpha(0.60));
   }
+
   quitaVida(){
     if(!this.player.pause){
       this.player.health--;
