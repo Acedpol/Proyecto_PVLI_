@@ -39,6 +39,7 @@ export default class game extends Phaser.Scene {
     this.objects.getChildren()[0] = new item(this, 1400, 140, 'burro', 1);
     this.objects.getChildren()[0].scale = 0.33;
     this.objects.getChildren()[1] = new item(this, 400, 2050, 'items', 18);
+    this.objects.getChildren()[2] = new item(this, 450, 2050, 'items', 7);
 
 
     this.cameras.main.zoom = 2; 

@@ -44,6 +44,11 @@ export default class menu extends Phaser.Scene {
     }
 
     this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
+
+    
+    // Inventario
+    this.contadorLlaves = 0;
+    this.contadorPilas = 0;
   }
 
   update(time, delta) {
