@@ -67,7 +67,8 @@ export default class game extends Phaser.Scene {
   pause(){
     this.pausemenu.openBook();
     this.player.pausePlayer();
-    this.enemy.pauseEnemy();
+    this.enemies.getChildren()[0].pauseEnemy();
+    //this.enemy.pauseEnemy();
   }
 
   createMap(layer1, layer2, keyMap, tileMap, tileZone){
@@ -98,8 +99,10 @@ export default class game extends Phaser.Scene {
     this.groundLayer.renderDebug(this.add.graphics().setAlpha(0.60));
   }
   quitaVida(){
-    this.player.health--;
-    console.log(this.player.health);
+    if(!this.player.pause){
+      this.player.health--;
+      console.log(this.player.health);
+    }
   }
 
 

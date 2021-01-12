@@ -37,10 +37,12 @@ export default class enemy extends Phaser.GameObjects.Sprite {
       
     }
     preUpdate(time,delta){
-      //this.quitaVida();
-      this.changeDirection();
-      this.move();
-      //console.log(this.scene.player.health);
+      if(!this.pause){
+        //this.quitaVida();
+        this.changeDirection();
+        this.move();
+        //console.log(this.scene.player.health);
+      }
     }
     
     changeDirection(){
@@ -71,9 +73,9 @@ export default class enemy extends Phaser.GameObjects.Sprite {
       }
     }
   }
-    
+    /*
     quitaVida(){
-        /*if(this.dir==0){
+        if(this.dir==0){
           if(!this.pause && this.scene.player.y<this.y+this.area && this.scene.player.y>this.y && this.scene.player.x>this.x-5&&this.scene.player.x<this.x+5){
             this.scene.player.health--;
            }
@@ -92,9 +94,10 @@ export default class enemy extends Phaser.GameObjects.Sprite {
           if(!this.pause &&this.scene.player.x<this.x+this.area && this.scene.player.x>this.x && this.scene.player.y>this.y-5&&this.scene.player.y<this.y+5){
             this.scene.player.health--;
            }
-        }*/
+        }
         this.scene.player.health--;
       }
+      */
     
     
     pauseEnemy(){
