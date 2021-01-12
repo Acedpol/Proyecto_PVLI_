@@ -35,8 +35,11 @@ export default class game extends Phaser.Scene {
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
     this.cameras.main.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
-    this.objects = this.physics.add.group({key: 'items', frameQuantity: 1});
-    this.objects.getChildren()[0] = new item(this, 400, 2050, 'items', 18);
+    this.objects = this.physics.add.group({key: 'items', frameQuantity: 2});
+    this.objects.getChildren()[0] = new item(this, 1400, 140, 'burro', 1);
+    this.objects.getChildren()[0].scale = 0.33;
+    this.objects.getChildren()[1] = new item(this, 400, 2050, 'items', 18);
+
 
     this.cameras.main.zoom = 2; 
     // agregado de colisiones del mapa al jugador:
@@ -79,7 +82,7 @@ export default class game extends Phaser.Scene {
     this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
     this.immovableLayer = this.map.createStaticLayer(layer2, [tileset2]);
     // this.immovableLayer = this.map.createStaticLayer(layer2, [tileset]);    
-    // // definición de colisiones:
+    // definición de colisiones:
      this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
      this.immovableLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
     // this.immovableLayer.setCollisionByProperty({collider : true});
@@ -103,7 +106,8 @@ export default class game extends Phaser.Scene {
     if(obj.visible == true){
       obj.setVisible(false);
       if(obj.id === 'llave') this.contadorLlaves = this.contadorLlaves + 1;
-      if(obj.id  === 'pila') this.contadorPilas = this.contadorPilas + 1;
+      else if(obj.id  === 'pila') this.contadorPilas = this.contadorPilas + 1;
+      //else if(obj.id === 'platero') ;
     }
 
   }
