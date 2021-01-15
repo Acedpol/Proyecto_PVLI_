@@ -33,25 +33,38 @@
  #### GDD: Game Design Document / Documento de Diseño del Videojuego
 #### **Platero’s Tale**
 **Documento de Diseño - Generation Games**
-#####Cristian René Castillo de León, Pedro Pablo Cubells Talavera,
-#####Pablo Etayo Rodríguez y Óscar Pedregal Borreguero
+Cristian René Castillo de León, Pedro Pablo Cubells Talavera,
+Pablo Etayo Rodríguez y Óscar Pedregal Borreguero
 GenerationGamesUCM@gmail.com
 
 #### **Resumen**
 **Géneros**: Aventura, Supervivencia, Puzle,
+
 **Mazmorras** (más o menos).
+
 **Modos**: Un jugador.
+
 **Público objetivo**:
+
 ● Edad: Mayores de 12
+
 ● Para todos los géneros y regiones
+
 ● Idioma: Castellano antiguo
+
 **Plataformas**: Navegador con ratón y teclado
+
 Cantidades:
 **Personajes principales**: 2, Platero y JRJ.
+
 Hitos:
+
 Hito 0: 14 de octubre de 2020
+
 Hito 1: 16 de noviembre de 2020
+
 Hito 2: 14 de diciembre de 2020
+
 Hito 3: 18 de enero de 2021
 
 **Logotipo del juego**
