@@ -191,7 +191,7 @@ El primer nivel comienza en la casa del protagonista, y representa una de las zo
 concurridas del pueblo. Las “paredes” del laberinto son las propias casas de los vecinos y
 vallas que restringen terrenos del pueblo.
 
-4.3.** Personajes**
+4.3. **Personajes**
 - Juan Ramón Jiménez: el personaje jugable. Es controlado por el jugador para lograr
 superar los niveles.
 - Platero: fiel compañero de Juan Ramón Jiménez. Espera quieto en un lugar del
@@ -202,7 +202,7 @@ mapa y hay que encontrarlo para avanzar al siguiente nivel.
 comentarios críticos, hacen bajar el autoestima del protagonista cuando le entra en
 su áng
 
-4.4.** Objetos y enemigos**
+4.4. **Objetos y enemigos**
 - Objetos Plateriños
 - Fotografías
 - Herraduras
