@@ -2,7 +2,7 @@
 export default class zone extends Phaser.Physics.Matter.Sprite {
     constructor(scene, x, y, texture, h, dir, enemy) {
         super(scene.matter.world,x, y, texture, h,dir, 0);
-       
+      
        this.setStatic(true);
        //this.scene.matter.add.image(this);
       // this.setOrigin(0,0);
@@ -24,6 +24,7 @@ export default class zone extends Phaser.Physics.Matter.Sprite {
        }
      // this.scene.physics.add.existing(this);
       //this.scene.matter.add.existing(this);
+      this.setDepth(-1);
       this.scene.add.existing(this);
        
         

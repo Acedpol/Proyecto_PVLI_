@@ -19,6 +19,11 @@ export default class game extends Phaser.Scene {
     this.cameras.main.fadeIn(1250);
     // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
     this.createMap("Superficie", "Muebles", 'MueblesFrente', 'Nivel', 'tilemap', 'ambiente'); 
+    this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
+    this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy',0,100,1);
+
+   /* this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
+    this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone', 100, this.enemies.getChildren()[0].dir, 0);*/
     this.player = new player(this, 350, 2050, "player");
     
  
@@ -28,14 +33,10 @@ export default class game extends Phaser.Scene {
  
     
    // this.enemy=new enemy(this,400,150,"enemy",0,0,0,"zone");
-    this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
-    this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy',0,100,1);
-
-    this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
-    this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone', 100, this.enemies.getChildren()[0].dir, 0);
+   
     this.cat1 = this.matter.world.nextCategory();
     this.playerCol.setCollisionCategory(this.cat1);
-    this.zones.getChildren()[0].setCollidesWith(this.cat1);
+    this.enemies.getChildren()[0].zones.getChildren()[0].setCollidesWith(this.cat1);
   // cuando se inicia la colisión
 this.matter.world.on('collisionstart', 
 function (event)  {
@@ -115,9 +116,9 @@ function (event)  {
     // creación de layers:
     const tileset = this.map.addTilesetImage('TileSetCaminos', tileMap);
     const tileset2 = this.map.addTilesetImage('Ambiente', tileZone);
-    this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-1);
+    this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-2);
     this.immovableLayer = this.map.createStaticLayer(layer2, [tileset2]).setDepth(2);
-    this.backLayer = this.map.createStaticLayer(layer3, [tileset2]).setDepth(0);    
+    this.backLayer = this.map.createStaticLayer(layer3, [tileset2]).setDepth(-1);    
     // // definición de colisiones:
     this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
     this.immovableLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
