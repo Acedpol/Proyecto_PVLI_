@@ -33,8 +33,8 @@
  #### GDD: Game Design Document / Documento de Diseño del Videojuego
 #### **Platero’s Tale**
 **Documento de Diseño - Generation Games**
-######Cristian René Castillo de León, Pedro Pablo Cubells Talavera,
-######Pablo Etayo Rodríguez y Óscar Pedregal Borreguero
+#####Cristian René Castillo de León, Pedro Pablo Cubells Talavera,
+#####Pablo Etayo Rodríguez y Óscar Pedregal Borreguero
 GenerationGamesUCM@gmail.com
 
 #### **Resumen**
@@ -154,6 +154,7 @@ El jugador puede optar por escuchar a sus vecinos en busca de pistas sobre el pa
 Platero, o bien, esquivarlos optando por una ruta más larga y sinuosa. El problema es que
 los vecinos no sólo hablarán sobre cosas de interés sino que pueden dañar su autoestima
 ya que no se llevan bien con el jugador.
+
 3.3. **Estética**
 Será un juego en blanco y negro exceptuando los objetos relacionados con Platero
 (haciendo especial incapie en el cambio de colores, como al usar la habilidad inspección).
@@ -162,18 +163,21 @@ otros autores de la época, noticias o imágenes relacionadas con los acontecimi
 momento.
 El mapa estará construido con lugares que aparecen en la novela, como el pueblo de
 Moguer, la ciudad, granjas, campo, ríos, montañas, cuevas, etc.
+
 4. **Contenidos**
 4.1. **Historia**
 Juan Ramón Jiménez es un escritor que vive en el pueblo de Moguer, Huelva, y su mejor
 amigo es su burro Platero. Todos los días sale en su búsqueda para que le alegre el día,
 pero no siempre lo encuentra con facilidad, en ocasiones tiene que recorrer todo el pueblo
 para encontrarle.
+
 4.2. **Niveles**
 El juego consta de tres niveles, cada uno de ellos representa una zona del pueblo o sus
 alrededores en forma de laberinto.
 El primer nivel comienza en la casa del protagonista, y representa una de las zonas
 concurridas del pueblo. Las “paredes” del laberinto son las propias casas de los vecinos y
 vallas que restringen terrenos del pueblo.
+
 4.3.** Personajes**
 - Juan Ramón Jiménez: el personaje jugable. Es controlado por el jugador para lograr
 superar los niveles.
@@ -184,6 +188,7 @@ mapa y hay que encontrarlo para avanzar al siguiente nivel.
 - Vecinos: son los enemigos dentro del juego. Para representar sus burlas y sus
 comentarios críticos, hacen bajar el autoestima del protagonista cuando le entra en
 su áng
+
 4.4.** Objetos y enemigos**
 - Objetos Plateriños
 - Fotografías
@@ -199,6 +204,7 @@ su áng
 - Baterías, utilizadas para recargar tanto la radio como la linterna
 - Monedas, sirven para comprar baterías, esparcidas por el mapa
 - Objetos para vender
+
 5. **Referencias**
 - Platero y Yo.
 - Zelda: A Link to the Past.
