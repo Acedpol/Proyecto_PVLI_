@@ -80,7 +80,7 @@ class bootloader extends Phaser.Scene {
                 end: 11
             })
             });
-        this.scene.start('mainMenu');
+        this.scene.start('mainmenu');
     }
 }
 export default bootloader;
