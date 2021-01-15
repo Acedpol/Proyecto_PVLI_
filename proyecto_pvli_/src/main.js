@@ -1,6 +1,7 @@
 import bootloader from './bootloader.js';
 import game from './game.js';
 import menu from './menu.js';
+
 import mainmenu from './mainmenu.js';
 
 const config = {
