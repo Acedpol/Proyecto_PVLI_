@@ -1,6 +1,6 @@
 export default class mainMenu extends Phaser.Scene{
     constructor(){
-        super({key: 'mainMenu'});
+        super({key: 'mainmenu'});
     }
 
 create(){
