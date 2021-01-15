@@ -11,6 +11,11 @@ class bootloader extends Phaser.Scene {
         this.load.image('live','live.png');
         this.load.image('libro', 'book.png');
         this.load.image('controles', 'controls.png');
+        this.load.image('menu', 'Menu.png');
+        this.load.image('title', 'title.png');
+        this.load.image('playButton', 'playButton.png');
+        this.load.image('options', 'optionsButton.png');
+
         //this.load.image('zone', 'zone.png');
         this.load.image('zone','zone2.png');
 
@@ -26,6 +31,8 @@ class bootloader extends Phaser.Scene {
         this.load.tilemapTiledJSON('Nivel', 'Nivel.json');
         this.load.image('tilemap', 'tileset3.png');
         this.load.image('ambiente', 'ambiente-extruded.png');
+        
+
         
         this.load.on('complete', () => {
             console.log('Load complete');
@@ -73,7 +80,7 @@ class bootloader extends Phaser.Scene {
                 end: 11
             })
             });
-        this.scene.start('menu');
+        this.scene.start('mainMenu');
     }
 }
 export default bootloader;
