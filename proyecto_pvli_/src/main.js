@@ -21,9 +21,23 @@ const config = {
         gamepad: true,
     },
     physics: {
-        default: "arcade",
-        "arcade": { debug: false } 
+       
+          /*default:"arcade",
+          //default:"matter"
+            arcade: {
+                //gravity: { y: 200 }
+                debug: true,
+            },
+            //default:"matter",
+            matter: {
+                gravity: { y: 0.5 },
+                debug:true,
+            },*/
+        
+      
     },
+  
+  
     scene: [bootloader, menu, game]
 };
 

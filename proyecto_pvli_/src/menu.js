@@ -4,7 +4,11 @@ import pausemenu from './pausemenu.js';
 
 export default class menu extends Phaser.Scene {
   constructor() {
-    super({ key: "menu" });
+    super({ key: "menu", physics:{
+      arcade: { debug:true, },
+      matter:{debug:true,},
+      } });
+   
   }
   preload() {}
 

@@ -7,7 +7,11 @@ import zone from './zone.js'
 
 export default class game extends Phaser.Scene {
   constructor() {
-    super({ key: "game" });
+    super({ key: "game", physics:{
+      arcade: { debug:true, },
+      matter:{debug:true,gravity:1},
+      } });
+    
   }
 
 
@@ -17,14 +21,31 @@ export default class game extends Phaser.Scene {
     this.createMap("Superficie", "Muebles", 'MueblesFrente', 'Nivel', 'tilemap', 'ambiente'); 
     this.player = new player(this, 350, 2050, "player");
     
+ 
+   this.playerCol=this.matter.add.sprite(this.player.x,this.player.y,'player',null,{label:'playerCol'});
+   this.playerCol.setVisible(false);
+  
+ 
+    
    // this.enemy=new enemy(this,400,150,"enemy",0,0,0,"zone");
     this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
     this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy',0,100,1);
 
     this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
     this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone', 100, this.enemies.getChildren()[0].dir, 0);
+    this.cat1 = this.matter.world.nextCategory();
+    this.playerCol.setCollisionCategory(this.cat1);
+    this.zones.getChildren()[0].setCollidesWith(this.cat1);
+  // cuando se inicia la colisión
+this.matter.world.on('collisionstart', 
+function (event)  {
+    this.scene.quitaVida();
+});
 
-    this.physics.add.overlap(this.player,this.zones,(o1, o2) => { this.quitaVida() });
+  
+
+
+
 
     this.cameras.main.startFollow(this.player);
     
@@ -57,11 +78,24 @@ export default class game extends Phaser.Scene {
     // Inventario
     this.contadorLlaves = 0;
     this.contadorPilas = 0;
+
+     // cuando se inicia la colisión
+
    
   }
 
   update(time, delta) {
     //console.log(this.player.health);
+    this.movePlayerCol();
+  /*  this.matter.world.on('collisionstart', (evento, cuerpo1, cuerpo2) =>  {
+  console.log("Entro");
+  if(cuerpo1.label==='playerCol'||cuerpo2.label==='playerCol'){
+    this.quitaVida();
+  }
+// hacer algo
+});*/
+   
+   
   }
 
   pause(){
@@ -99,7 +133,7 @@ export default class game extends Phaser.Scene {
 
   quitaVida(){
     if(!this.player.pause){
-      this.player.health--;
+      this.player.health=this.player.health-1;
       console.log(this.player.health);
     }
   }
@@ -118,5 +152,10 @@ export default class game extends Phaser.Scene {
   getLlaves(){ return this.contadorLlaves; }
 
   getPilas(){ return this.contadorPilas; }
+  movePlayerCol(){
+    this.playerCol.setPosition(this.player.x,this.player.y);
+  }
+
+
 }
 

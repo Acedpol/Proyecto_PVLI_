@@ -4,6 +4,7 @@ export default class player extends Phaser.GameObjects.Sprite {
       super(scene, x, y, texture, 0);
       this.scene.add.existing(this);
       this.scene.physics.add.existing(this);
+      //this.scene.matter.add.sprite(this);
       this.body.setCollideWorldBounds();
       this.body.setSize(this.width / 1.5, this.height, true);
       this.speed = 180;
@@ -23,6 +24,7 @@ export default class player extends Phaser.GameObjects.Sprite {
         if(!this.pause){
             if(this.cursors.up.isDown) {
                 this.body.setVelocityY(-this.speed);
+                
             }
             if(this.cursors.down.isDown) {
                 this.body.setVelocityY(this.speed);
@@ -40,6 +42,8 @@ export default class player extends Phaser.GameObjects.Sprite {
         let [velocityX, velocityY] = [this.body.velocity.x, this.body.velocity.y];
 
         this.animations(velocityX, velocityY);
+       
+
 
         
     }
