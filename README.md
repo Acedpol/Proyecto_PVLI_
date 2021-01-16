@@ -177,6 +177,9 @@ momento.
 El mapa estará construido con lugares que aparecen en la novela, como el pueblo de
 Moguer, la ciudad, granjas, campo, ríos, montañas, cuevas, etc.
 
+**Música utilizada**
+Menú principal: Stasis by Steve Oxen.
+
 4. **Contenidos**
 4.1. **Historia**
 Juan Ramón Jiménez es un escritor que vive en el pueblo de Moguer, Huelva, y su mejor

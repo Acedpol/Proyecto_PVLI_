@@ -1,36 +1,31 @@
-export default class menuprincipal extends Phaser.Scene{
+import botones from './botones.js';
+
+export default class menuprincipal extends botones{
     constructor(){
-        super({key: 'menuprincipal'});
+        super('menuprincipal');
     }
 
 create(){
+
+    const config = {
+        mute:false,
+        volume: 1,
+        rate: 1,
+        detune: 0,
+        seek: 0,
+        loop: true,
+        delay: 0,
+    }
+    this.sound.play('menumusic', config);
+
     this.add.image(0, 0, 'menu').setOrigin(0);
     this.title = this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.2, 'title').setDepth(1);
     this.title.setScale(1.5, 1.5);
     this.playButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, 'playButton').setDepth(1);
-    this.optionsButton = this.add.image(this.game.renderer.width / 2, (this.game.renderer.height / 2) * 1.5, 'options').setDepth(1);
+    this.volumeButton = this.add.image(this.game.renderer.width - 200, (this.game.renderer.height / 2) * 1.75, 'volume').setDepth(1);
 
-    this.CrearBoton(this.playButton);
-    this.playButton.on("pointerdown", () => {
-        this.scene.start('menu');
-    })
-
-    /*this.CrearBoton(this.optionsButton);
-    this.optionsButton.on("pointerdown", () => {
-        this.scene.start()
-    })*/
-
+    this.CambioEscena(this.playButton, 'menu');
+    this.BotonVolumen(this.volumeButton, 1);
 }
 
-    CrearBoton(button){
-        button.setInteractive();
-        button.on("pointerover", () => {
-            button.setScale(1.25, 1.25);
-        })
-        button.on("pointerout", () =>{
-            button.setScale(1, 1);
-        })
-        
-        return button;
-    }
 }

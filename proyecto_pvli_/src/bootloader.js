@@ -15,6 +15,7 @@ class bootloader extends Phaser.Scene {
         this.load.image('title', 'title.png');
         this.load.image('playButton', 'playButton.png');
         this.load.image('options', 'optionsButton.png');
+        this.load.image('volume', 'volume.png');
 
         //this.load.image('zone', 'zone.png');
         this.load.image('zone','zone2.png');
@@ -32,7 +33,9 @@ class bootloader extends Phaser.Scene {
         this.load.image('tilemap', 'tileset3.png');
         this.load.image('ambiente', 'ambiente-extruded.png');
         
-
+        this.load.setPath('./assets/music');
+        this.load.audio('menumusic', './menumusic.mp3');
+        this.load.audio('buttonpress', './buttonpress.mp3');
         
         this.load.on('complete', () => {
             console.log('Load complete');
