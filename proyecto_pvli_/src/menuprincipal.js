@@ -6,7 +6,7 @@ export default class menuprincipal extends botones{
     }
 
 create(){
-
+    super.create();
     const config = {
         mute:false,
         volume: 1,

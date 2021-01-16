@@ -23,8 +23,7 @@ export default class botones extends Phaser.Scene{
         this.CrearBoton(button);
         button.on("pointerdown", () => {
             this.buttonpress.play();
-            setTimeout(() =>{
-                this.sound.stopAll();
+            setTimeout(() => {
                 this.scene.start(scenename);
             }, 1000);
         });
