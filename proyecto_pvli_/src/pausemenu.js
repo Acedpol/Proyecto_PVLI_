@@ -30,16 +30,9 @@ export default class pausemenu extends Phaser.GameObjects.Sprite {
     }
 
     openBook(){
-        if(this.visible) {
-            this.setVisible(false);
-            this.controls.setVisible(false);
-            this.inventory.setVisible(false);
-        }
-        else {
-            this.setVisible(true);
-            this.controls.setVisible(true);
-            this.inventory.setVisible(true);
-        }
+        this.setVisible(!this.visible);
+        this.controls.setVisible(this.visible);
+        this.inventory.setVisible(this.visible);
     }
   }
   

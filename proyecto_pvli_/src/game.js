@@ -3,6 +3,8 @@ import health from './health.js';
 import pausemenu from './pausemenu.js';
 import enemy from './enemy.js';
 import item from './item.js';
+import key from './key.js';
+import batery from './batery.js';
 import zone from './zone.js'
 
 export default class game extends Phaser.Scene {
@@ -57,12 +59,19 @@ function (event)  {
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
     this.cameras.main.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
-    this.objects = this.physics.add.group({key: 'items', frameQuantity: 2});
-    this.objects.getChildren()[0] = new item(this, 1400, 140, 'burro', 1);
-    this.objects.getChildren()[0].scale = 0.33;
-    this.objects.getChildren()[1] = new item(this, 400, 2050, 'items', 18);
-    this.objects.getChildren()[2] = new item(this, 450, 2050, 'items', 7);
+    // Creación manual de objetos (tendrán que estar en Tiled)
+    this.objects = this.physics.add.group({key: 'items', frameQuantity: 1});
+    this.objects.getChildren()[0] = new batery(this, 400, 2050, 'items', 18);
+    this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
+    
+    // Coge objetos
+    this.physics.add.overlap(this.player, this.objects, (o1, o2) => { o2.catchObject() } );
 
+    // Creación de platero
+    this.platero = new item(this, 1400, 140, 'burro', 1);
+    this.platero.scale = 0.33;
+    // Win
+    this.physics.add.overlap(this.player, this.platero, event => { this.scene.start('mainMenu') } );
 
     this.cameras.main.zoom = 2; 
     // agregado de colisiones del mapa al jugador:
@@ -71,9 +80,6 @@ function (event)  {
     // this.debugCollisionsMapa();
 
     this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
-
-    // Coge objetos
-    this.physics.add.overlap(this.player, this.objects, (o1, o2) => { this.catchObject(o2) } );
     
 
     // Inventario
@@ -139,20 +145,6 @@ function (event)  {
     }
   }
 
-
-  catchObject(obj){
-    if(obj.visible == true){
-      obj.setVisible(false);
-      if(obj.id === 'llave') this.contadorLlaves = this.contadorLlaves + 1;
-      else if(obj.id  === 'pila') this.contadorPilas = this.contadorPilas + 1;
-      //else if(obj.id === 'platero') ;
-    }
-
-  }
-
-  getLlaves(){ return this.contadorLlaves; }
-
-  getPilas(){ return this.contadorPilas; }
   movePlayerCol(){
     this.playerCol.setPosition(this.player.x,this.player.y);
   }
