@@ -20,13 +20,17 @@ export default class game extends Phaser.Scene {
   create() {
     this.cameras.main.fadeIn(1250);
     // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
-    this.createMap("Superficie", "Muebles", 'MueblesFrente', 'Nivel', 'tilemap', 'ambiente'); 
+    this.createMap("Superficie", "Muebles", 'MueblesFrente', 'Nivel', 'tilemap', 'ambiente');
+  /*  this.shape=this.cache.json.get('zonePhy');
+    console.log(this.shape);*/
+
     this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
     this.enemies.getChildren()[0] = new enemy(this, 1000, 700, 'enemy',0,100,1);
 
    /* this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
     this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone', 100, this.enemies.getChildren()[0].dir, 0);*/
     this.player = new player(this, 350, 2050, "player");
+    
     
  
    this.playerCol=this.matter.add.sprite(this.player.x,this.player.y,'player',null,{label:'playerCol'});

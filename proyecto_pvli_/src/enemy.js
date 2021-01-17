@@ -25,8 +25,10 @@ export default class enemy extends Phaser.GameObjects.Sprite {
       this.typeMov=typeMov;
       this.x=x;
       this.y=y;
+      
       this.zones = this.scene.physics.add.group({key: 'zone', frameQuantity: 0});
       this.zones.getChildren()[0] = new zone(this.scene, this.x,  this.y+(this.height/2),'zone', 100, this.dir, 0);
+      //this.zones.getChildren()[0].setPolygon(3,0);
       /*this.zones = this.scene.physics.add.group({key:'zone', frameQuantity: 0});
       this.zones.getChildren()[0] = new zone(this.scene,this,this.x,this.y, 'zone');*/
 

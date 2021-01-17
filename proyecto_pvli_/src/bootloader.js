@@ -16,9 +16,11 @@ class bootloader extends Phaser.Scene {
         this.load.image('playButton', 'playButton.png');
         this.load.image('options', 'optionsButton.png');
         this.load.image('volume', 'volume.png');
+        
+        this.load.image('zone', 'zone.png');
+       // this.load.image('zone','zone2.png');
 
-        //this.load.image('zone', 'zone.png');
-        this.load.image('zone','zone2.png');
+        //this.load.json('zonePhy','zonePhysics.json');
 
         this.load.spritesheet("player", 'PlayerSheet.png', {frameWidth: 47, frameHeight: 42 });
         this.load.spritesheet("enemy", 'EnemySheet.png', {frameWidth: 47, frameHeight: 42 });
