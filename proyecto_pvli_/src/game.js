@@ -6,6 +6,7 @@ import item from './item.js';
 import key from './key.js';
 import batery from './batery.js';
 import zone from './zone.js'
+import healingitem from './healingitem.js';
 
 export default class game extends Phaser.Scene {
     constructor() {
@@ -38,6 +39,7 @@ export default class game extends Phaser.Scene {
         
         // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
         this.matter.world.on('collisionstart', function (event)  { this.scene.quitaVida(); });
+        this.matter.world.on('collisionstart', () => { this.player.addOrRemoveLife(10); });
 
         // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
 
@@ -97,7 +99,9 @@ export default class game extends Phaser.Scene {
     pause() {
         this.pausemenu.openBook();
         this.player.pausePlayer();
-        this.enemies.getChildren()[0].pauseEnemy();
+        for(var i; i < this.enemies.getLength(); i++){
+        this.enemies.getChildren()[i].pauseEnemy();
+        }
         //this.enemy.pauseEnemy();
     }
 
@@ -132,7 +136,7 @@ export default class game extends Phaser.Scene {
             console.log(this.player.health);
         }
     }
-
+    
     movePlayerCol() {
         this.playerCol.setPosition(this.player.x,this.player.y);
     }

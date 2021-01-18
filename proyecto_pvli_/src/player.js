@@ -63,6 +63,15 @@ export default class player extends Phaser.GameObjects.Sprite {
         this.body.setVelocityX(0);
         this.body.setVelocityY(0);
     }
+
+    addOrRemoveLife(vida){
+        if(!this.pause)
+        {
+            if(this.health < 100 - vida) this.health += vida;
+            else this.health = 100;
+        }
+    }
+
 }
 
 // este código se la saca!
