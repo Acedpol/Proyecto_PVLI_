@@ -1,6 +1,6 @@
 
 export default class player extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture) {
+     constructor(scene, x, y, texture) {
         super(scene, x, y, texture, 0);
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
@@ -12,12 +12,24 @@ export default class player extends Phaser.GameObjects.Sprite {
         this.cursors = this.scene.input.keyboard.createCursorKeys();
         this.health = 100;
         this.lives = 3;
-        this.x=x;
-        this.y=y;
+        this.x = x;
+        this.y = y;
         this.pause = false;
         this.setDepth(1);
+        // this.create(scene);
     }
-    
+
+    setCols_Scene(scene) {
+        scene.physics.add.collider(scene.player, scene.groundLayer); // terreno
+        scene.physics.add.collider(scene.player, scene.immovableLayer); // muebles
+    }
+
+    setCols_Stage(scene) {
+        scene.playerCol = scene.matter.add.sprite(scene.player.x, scene.player.y, 'player', null, {label:'playerCol'});
+        scene.playerCol.setVisible(false);
+        scene.physics.add.collider(scene.player, scene.enemy); // enemigos
+        scene.physics.add.overlap(scene.player, scene.objects, (o1, o2) => { o2.catchObject() }); // objetos
+    }
 
     preUpdate(time, delta) {
         super.preUpdate(time, delta);
