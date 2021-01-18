@@ -63,15 +63,14 @@ export default class game extends Phaser.Scene {
         this.objects = this.physics.add.group({key: 'items', frameQuantity: 0});
         this.objects.getChildren()[0] = new batery(this, 400, 2050, 'items', 18);
         this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
-        this.objects.getChildren()[2] = new door(this, 500, 2050, 'door');
-        this.objects.getChildren()[2].scale = 0.2;
+        this.objects.getChildren()[2] = new door(this, 500, 2050, 'zone2');
         // // inventario
         this.contadorLlaves = 0;
         this.contadorPilas = 0;
 
         // // colisiones player
         this.physics.add.collider( this.player, this.enemy ); // enemigos
-        this.physics.add.collider( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
+        this.physics.add.overlap( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
         this.physics.add.collider(this.player, this.groundLayer); // terreno
         this.physics.add.collider(this.player, this.immovableLayer); // muebles
 
@@ -79,7 +78,7 @@ export default class game extends Phaser.Scene {
         this.keyZ = this.input.keyboard.addKey('Z');
         
         // Final: Platero, (...) con un trotecillo alegre
-        this.platero = new item(this, 1400, 140, 'burro', 1);
+        this.platero = new item(this, 1400, 140, 'burro', 0);
         this.platero.scale = 0.33;
         // // the end of the game!
         this.physics.add.overlap(this.player, this.platero, event => { this.scene.start('mainMenu') } );
@@ -163,7 +162,7 @@ export default class game extends Phaser.Scene {
     }
 
     setPlatero() {
-        this.platero = new item(this, 1400, 140, 'burro', 1);
+        this.platero = new item(this, 1400, 140, 'burro', 0);
         this.platero.scale = 0.33;
         // // the end of the game!
         this.physics.add.overlap(this.player, this.platero, event => { this.scene.start('mainMenu') } );
