@@ -12,22 +12,22 @@ export default class game extends Phaser.Scene {
     constructor(scenekey) {
         super({ key: scenekey, physics:{
             arcade: { debug:true, },
-            matter:{debug:true,gravity:1},
+            matter:{debug:true,gravity:0},
         } });
     }
     
     create() {
         // Grupos y vida
         this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
-        this.objects = this.physics.add.group({key: 'items', frameQuantity: 1});
-        this.live = new health( this, 320, 190, "live" ).setDepth(3);
+        this.objects = this.physics.add.group({key: 'items', frameQuantity: 0});
+        this.live = new health( this, 350, 200, "live" ).setDepth(3);
 
         // Vista o punto de vista: cámara
         this.cameras.main.zoom = 2;
         this.cameras.main.fadeIn(1250);
         
         // inicialización menu pause: libro
-        this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro");
+        this.pausemenu  = new pausemenu(this, this.game.renderer.x, this.game.renderer.y, "libro");
 
         // // inventario
         this.contadorLlaves = 0;
@@ -45,7 +45,7 @@ export default class game extends Phaser.Scene {
         //this.enemy.pauseEnemy();
     }
 
-    createMap(layer1, layer2, layer3, keyMap, tileMap, tileZone) {
+    createMap(layer1, layer2, layer3, tileName1, tileName2, keyMap, tileMap, tileZone) {
         // creación del mapa:
         this.map = this.make.tilemap({ 
             key: keyMap, 
@@ -53,8 +53,8 @@ export default class game extends Phaser.Scene {
             tileHeight: 16 
         });
         // creación de layers:
-        const tileset = this.map.addTilesetImage('TileSetCaminos', tileMap);
-        const tileset2 = this.map.addTilesetImage('Ambiente', tileZone);
+        const tileset = this.map.addTilesetImage(tileName1, tileMap);
+        const tileset2 = this.map.addTilesetImage(tileName2, tileZone);
         this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-2);
         this.immovableLayer = this.map.createStaticLayer(layer2, [tileset2]).setDepth(2);
         this.backLayer = this.map.createStaticLayer(layer3, [tileset2]).setDepth(-1);    
@@ -71,10 +71,9 @@ export default class game extends Phaser.Scene {
         this.backLayer.renderDebug(this.add.graphics().setAlpha(0.60));
     }
 
-    quitaVida() {
+    quitaVida(vida) {
         if(!this.player.pause) {
-            this.player.health = this.player.health - 1;
-            console.log(this.player.health);
+            this.player.addOrRemoveLife(vida);
         }
     }
 
