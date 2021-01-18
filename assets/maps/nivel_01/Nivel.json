@@ -275,7 +275,7 @@
  "nextobjectid":32,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"2020.11.25",
+ "tiledversion":"1.4.3",
  "tileheight":16,
  "tilesets":[
         {
@@ -34097,32 +34097,6 @@
          "tileheight":16,
          "tilewidth":16,
          "transparentcolor":"#000000"
-        }, 
-        {
-         "columns":47,
-         "firstgid":3823,
-         "image":"Animales.png",
-         "imageheight":378,
-         "imagewidth":756,
-         "margin":0,
-         "name":"Animales",
-         "spacing":0,
-         "tilecount":0,
-         "tileheight":16,
-         "tilewidth":16
-        }, 
-        {
-         "columns":13,
-         "firstgid":3823,
-         "image":"Personajes.png",
-         "imageheight":170,
-         "imagewidth":213,
-         "margin":0,
-         "name":"Personajes",
-         "spacing":0,
-         "tilecount":0,
-         "tileheight":16,
-         "tilewidth":16
         }],
  "tilewidth":16,
  "type":"map",
