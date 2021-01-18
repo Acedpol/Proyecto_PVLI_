@@ -12,7 +12,7 @@ export default class game extends Phaser.Scene {
     constructor() {
         super({ key: "game", physics:{
             arcade: { debug:true, },
-            matter:{debug:true,gravity:1},
+            matter:{debug:true,gravity:0},
         } });
     }
     
@@ -21,16 +21,18 @@ export default class game extends Phaser.Scene {
         this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
         this.enemies.getChildren()[0] = new enemy( this, 1000, 700, 'enemy', 0, 100, 1 );
         
+        // Escenario: mapa
+        this.createMap("Superficie", "Muebles", 'MueblesFrente', 'Nivel', 'tilemap', 'ambiente');
+        this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
+
         // Player / Jugador : abuelo
         this.player = new player( this, 350, 2050, "player" );
-        this.live = new health( this, 320, 190, "live" ).setDepth(3);
+        this.live = new health( this, 350, 200, "live" ).setDepth(10);
+
         this.playerCol = this.matter.add.sprite( this.player.x, this.player.y, 'player', null, {label:'playerCol'} );
+        this.playerCol.setFixedRotation();
         this.playerCol.setVisible(false);
-        // // colisiones player
-        this.physics.add.collider( this.player, this.enemy ); // enemigos
-        this.physics.add.overlap( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
-        this.physics.add.collider(this.player, this.groundLayer); // terreno
-        this.physics.add.collider(this.player, this.immovableLayer); // muebles
+
         
         // wrappers: colisiones player y enemies (no se cuales o si es una capa)
         this.cat1 = this.matter.world.nextCategory();
@@ -39,7 +41,6 @@ export default class game extends Phaser.Scene {
         
         // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
         this.matter.world.on('collisionstart', function (event)  { this.scene.quitaVida(); });
-        this.matter.world.on('collisionstart', () => { this.player.addOrRemoveLife(10); });
 
         // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
 
@@ -52,9 +53,6 @@ export default class game extends Phaser.Scene {
   
         // this.debugCollisionsMapa();
 
-        // Escenario: mapa
-        this.createMap("Superficie", "Muebles", 'MueblesFrente', 'Nivel', 'tilemap', 'ambiente');
-        this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
         // Vista o punto de vista: cámara
         this.cameras.main.zoom = 2;
@@ -73,6 +71,12 @@ export default class game extends Phaser.Scene {
         this.contadorLlaves = 0;
         this.contadorPilas = 0;
 
+        // // colisiones player
+        this.physics.add.collider( this.player, this.enemy ); // enemigos
+        this.physics.add.overlap( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
+        this.physics.add.collider(this.player, this.groundLayer); // terreno
+        this.physics.add.collider(this.player, this.immovableLayer); // muebles
+        
         // Final: Platero, (...) con un trotecillo alegre
         this.platero = new item(this, 1400, 140, 'burro', 1);
         this.platero.scale = 0.33;
@@ -131,10 +135,7 @@ export default class game extends Phaser.Scene {
     }
 
     quitaVida() {
-        if(!this.player.pause) {
-            this.player.health = this.player.health - 1;
-            console.log(this.player.health);
-        }
+        this.player.addOrRemoveLife(-10);
     }
     
     movePlayerCol() {
