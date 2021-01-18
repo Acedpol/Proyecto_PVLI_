@@ -16,7 +16,8 @@ class bootloader extends Phaser.Scene {
         this.load.image('playButton', 'playButton.png');
         this.load.image('options', 'optionsButton.png');
         this.load.image('volume', 'volume.png');
-        
+        this.load.image('lifebar', './sadnessbar.png');
+
         this.load.image('zone', 'zone.png');
        // this.load.image('zone','zone2.png');
 

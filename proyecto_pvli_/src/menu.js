@@ -22,8 +22,9 @@ export default class menu extends Phaser.Scene {
         this.cameras.main.startFollow(this.player);
 
         this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro");
-        this.live = new health(this,320,190,"live");
-    
+
+        this.live = new health(this,350,200,"live");
+
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
         this.cameras.main.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 

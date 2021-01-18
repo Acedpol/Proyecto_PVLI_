@@ -6,6 +6,7 @@ export default class health extends Phaser.GameObjects.Sprite {
         this.displayWidth = 150;
         this.setScrollFactor(0);
         this.displayHeight = 20;
+        this.scene.add.sprite(95, 20, 'lifebar').setDepth(4);
         this.scene.add.existing(this);      
     }
 
