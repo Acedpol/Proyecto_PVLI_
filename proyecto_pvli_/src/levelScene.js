@@ -6,7 +6,7 @@ import item from './item.js';
 import key from './key.js';
 import batery from './batery.js';
 import zone from './zone.js'
-import healingitem from './healingitem.js';
+import healthitem from './healingitem.js';
 
 export default class game extends Phaser.Scene {
     constructor(scenekey) {

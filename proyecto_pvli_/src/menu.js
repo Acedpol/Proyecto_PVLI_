@@ -2,7 +2,7 @@ import player from './player.js';
 import health from './health.js';
 import pausemenu from './pausemenu.js';
 import item from './item.js';
-import healingitem from './healingitem.js';
+import healthitem from './healthitem.js';
 
 export default class menu extends Phaser.Scene {
     constructor() {
@@ -49,10 +49,10 @@ export default class menu extends Phaser.Scene {
 
         this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
 
-        this.objects = this.physics.add.group({key: 'items', frameQuantity: 1});
+        this.objects = this.physics.add.group({key: 'items', frameQuantity: 0});
         this.physics.add.overlap( this.player, this.objects, (o1, o2) => { o2.catchObject() } )
-        this.objects.getChildren()[2] = new healingitem(this, 200, 200, 'items', 32, -10);
-        
+        this.objects.getChildren()[0] = new healthitem(this, 450, 200, 'items', 42, -10);
+        this.objects.getChildren()[1] = new healthitem(this, 250, 200, 'items', 32, 10);
 
         // Inventario
         this.contadorLlaves = 0;
@@ -89,9 +89,7 @@ export default class menu extends Phaser.Scene {
         this.immovableLayer.setCollisionByProperty({collider : true});
         // ----------- this.immovableLayer.setCollisionBetween(1, 999, true); -> con indices   
     }
-    
-    changeScene(escena) {
-    }
+
 
     contador() {
         this.contar++;

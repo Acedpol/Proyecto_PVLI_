@@ -6,7 +6,7 @@ import item from './item.js';
 import key from './key.js';
 import batery from './batery.js';
 import zone from './zone.js'
-import healingitem from './healingitem.js';
+import healthitem from './healthitem.js';
 
 export default class game extends Phaser.Scene {
     constructor() {
@@ -66,7 +66,7 @@ export default class game extends Phaser.Scene {
         this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro");
         
         // Creación manual de objetos (tendrán que estar en Tiled)
-        this.objects = this.physics.add.group({key: 'items', frameQuantity: 1});
+        this.objects = this.physics.add.group({key: 'items', frameQuantity: 0});
         this.objects.getChildren()[0] = new batery(this, 400, 2050, 'items', 18);
         this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
         // // inventario
