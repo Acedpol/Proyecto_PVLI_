@@ -37,8 +37,6 @@ const config = {
         
       
     },
-  
-  
     scene: [bootloader, menuprincipal, menu, game]
 };
 
