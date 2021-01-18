@@ -31,8 +31,6 @@ export default class zone extends Phaser.Physics.Matter.Sprite {
         //this.scene.matter.add.existing(this);
         this.setDepth(-1);
         this.body.angle=30-0.27;
-        console.log(this);
-        console.log(this.body);
       
         // this.body.angle=this.angle;
         /* this.shape = this.scene.cache.json.get('zonePhy');*/
