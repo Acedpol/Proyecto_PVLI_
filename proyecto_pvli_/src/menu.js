@@ -8,36 +8,19 @@ export default class menu extends Phaser.Scene {
     constructor() {
         super({ key: "menu", physics:{
             arcade: { debug:true, },
-            matter:{debug:true,},
+            matter: { debug:true, },
         } });
     }
     
     preload() {}
     
     create() {
-        this.cameras.main.fadeIn(1000);
+        // Escenario: mapa
         this.createMap("Superficie", "Muebles", 'Hogar', 'tilemapmenu');
-        this.player = new player(this, (this.map.tileWidth * this.map.width) / 2, (this.map.tileHeight * this.map.height) / 2, "player");
-
-        this.cameras.main.startFollow(this.player);
-
-        this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro");
-
-        this.live = new health(this,350,200,"live");
-
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
-        this.cameras.main.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
-
-        this.cameras.main.zoom = 2; 
-
-        // agregado de colisiones del mapa al jugador:
-        this.physics.add.collider(this.player, this.groundLayer);
-        this.physics.add.collider(this.player, this.immovableLayer); 
-        // this.debugCollisionsMapa();
-    
-        this.contar = 0;
-    
+        this.contar = 0; // no se que es este contador..
+        
         for (const object of this.map.getObjectLayer('ChangeSceneLayer').objects){
             if(object.name === 'Changer') {
                 this.trigger = this.add.zone(object.x, object.y);
@@ -47,17 +30,32 @@ export default class menu extends Phaser.Scene {
                 this.trigger.escena = object.properties[0].value;
             }
         }
-
+        
+        // Player / Jugador : abuelo
+        this.player = new player(this, (this.map.tileWidth * this.map.width) / 2, (this.map.tileHeight * this.map.height) / 2, "player");
+        this.live = new health(this, 320, 190, "live");
+        this.player.setCols_Scene(this);
+        
+        // this.debugCollisionsMapa();
+        
+        // inicialización menu pause: libro
+        this.pausemenu  = new pausemenu(this, this.player.x, this.player.y, "libro");
         this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
-
+        
         this.objects = this.physics.add.group({key: 'items', frameQuantity: 0});
         this.physics.add.overlap( this.player, this.objects, (o1, o2) => { o2.catchObject() } )
         this.objects.getChildren()[0] = new healthitem(this, 450, 200, 'items', 42, -10);
         this.objects.getChildren()[1] = new healthitem(this, 250, 200, 'items', 32, 10);
-
+        
         // Inventario
         this.contadorLlaves = 0;
         this.contadorPilas = 0;
+        
+        // Vista o punto de vista: cámara
+        this.cameras.main.zoom = 2; 
+        this.cameras.main.fadeIn(1000);
+        this.cameras.main.startFollow(this.player);
+        this.cameras.main.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
     }
 
     update(time, delta) {
@@ -74,6 +72,7 @@ export default class menu extends Phaser.Scene {
         this.player.pausePlayer();
     }
 
+    // crea la casa / el hogar
     createMap(layer1, layer2, keyMap, tileMap) {
         // creación del mapa:
         this.map = this.make.tilemap({ 

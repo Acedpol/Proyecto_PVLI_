@@ -54,19 +54,19 @@ export default class zone extends Phaser.Physics.Matter.Sprite {
     changeAngle() {
        if(this.scene.enemies.getChildren()[this.enemType].dir == 0) {
            // this.body.angle=45;
-            this.angle=0;
+            this.angle = 0;
         }
         else if(this.scene.enemies.getChildren()[this.enemType].dir == 1) {
             //this.body.angle=225;
-            this.angle=180;
+            this.angle = 180;
         }
         else if(this.scene.enemies.getChildren()[this.enemType].dir == 2) {
            // this.body.angle=135;
-            this.angle=90;
+            this.angle = 90;
         }
         else if(this.scene.enemies.getChildren()[this.enemType].dir == 3) {
             //this.body.angle=315;
-            this.angle=270;
+            this.angle = 270;
         }
     }
 

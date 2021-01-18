@@ -19,7 +19,7 @@ class bootloader extends Phaser.Scene {
         this.load.image('lifebar', './sadnessbar.png');
 
         this.load.image('zone', 'zone.png');
-       // this.load.image('zone','zone2.png');
+        // this.load.image('zone','zone2.png');
 
         //this.load.json('zonePhy','zonePhysics.json');
 
