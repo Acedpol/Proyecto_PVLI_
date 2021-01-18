@@ -53,12 +53,12 @@ export default class game extends levelScene {
         // Creación manual de objetos (tendrán que estar en Tiled)
         this.objects.getChildren()[0] = new batery(this, 400, 2050, 'items', 18);
         this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
-        this.objects.getChildren()[2] = new door(this, 500, 2050, 'door');
+        this.objects.getChildren()[2] = new door(this, 700, 1945, 'zone2');
         this.objects.getChildren()[2].scale = 0.2;
 
         // // colisiones player
         this.physics.add.collider( this.player, this.enemy ); // enemigos
-        this.physics.add.collider( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
+        this.physics.add.overlap( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
         this.physics.add.collider( this.player, this.groundLayer); // terreno
         this.physics.add.collider( this.player, this.immovableLayer); // muebles
 

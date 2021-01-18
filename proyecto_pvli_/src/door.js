@@ -5,7 +5,7 @@ export default class door extends item {
         super(scene, x, y, texture, numItem);
         this.setVisible(false);
         this.door = new item(this.scene, this.x, this.y, 'door', 0);
-        this.door.scale = 0.2;
+        this.door.scale = 0.12;
         this.scene.physics.add.collider(this.scene.player, this.door);
     }
 

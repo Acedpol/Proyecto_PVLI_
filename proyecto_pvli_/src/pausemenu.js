@@ -7,14 +7,14 @@ export default class pausemenu extends Phaser.GameObjects.Sprite {
       this.scale = 0.25;
       this.setVisible(false);
       this.cursors = this.scene.input.keyboard.createCursorKeys();
-      this.setDepth(2);
+      this.setDepth(3);
       this.controls = this.scene.add.image(this.x, this.y, "controles");
       this.controls.scale = 0.05;
       this.controls.setVisible(false);
-      this.controls.setDepth(2);
+      this.controls.setDepth(3);
       this.inventory = this.scene.add.text(x, y, 'OBJETOS \n\n\nLlaves: 0 \n\nPilas: 0', { fontFamily: 'Arial', fontSize: 14, color: '#000000' });
       this.inventory.setVisible(false);
-      this.inventory.setDepth(2);
+      this.inventory.setDepth(3);
     }
     
     preUpdate(time, delta){
