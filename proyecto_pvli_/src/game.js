@@ -88,7 +88,7 @@ export default class game extends levelScene {
     }
 
     setPlatero() {
-        this.platero = new item(this, 1400, 140, 'burro', 1);
+        this.platero = new item(this, 1400, 140, 'burro', 0);
         this.platero.scale = 0.33;
         // // the end of the game!
         this.physics.add.overlap(this.player, this.platero, event => { this.scene.start('mainMenu') } );
