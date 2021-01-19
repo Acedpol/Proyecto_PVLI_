@@ -94,17 +94,8 @@ export default class game extends levelScene {
         this.objects.getChildren()[0].x = this.map_objects[0].x; // añadido
         this.objects.getChildren()[0].y = this.map_objects[0].y; // añadido
 
-        // // colisiones player
-        this.physics.add.collider( this.player, this.enemy ); // enemigos
-        this.physics.add.collider( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
-        this.physics.add.collider( this.player, this.groundLayer); // terreno
-        this.physics.add.collider( this.player, this.immovableLayer); // muebles
-
         // Para abrir puertas (usado en door.js)
         this.keyZ = this.input.keyboard.addKey('Z');
-        
-        // tecla de salida
-        this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
     }
 
     update(time, delta) {
