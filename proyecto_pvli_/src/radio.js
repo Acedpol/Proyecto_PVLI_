@@ -8,7 +8,7 @@ export default class radio extends Phaser.GameObjects.Sprite {
         this.r=this.scene.add.image(x-20,y,'radio').setDepth(11);
         this.r.displayOriginX = 0;
         this.r.displayHeight = 20;
-        this.r.displayWidth = 130;
+        this.r.displayWidth = 20;
         this.r.setScrollFactor(0);
         this.duration=n;
         this.maxDuration=this.duration;

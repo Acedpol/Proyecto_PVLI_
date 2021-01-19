@@ -15,6 +15,7 @@ export default class health extends Phaser.GameObjects.Sprite {
     }
 
     preUpdate() {
+        
         this.displayWidth=this.scene.player.health*150/100;
     }
 }
