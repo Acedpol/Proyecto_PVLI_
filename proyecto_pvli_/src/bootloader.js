@@ -20,6 +20,7 @@ class bootloader extends Phaser.Scene {
         this.load.image('durationRadio', 'durationRadio.png');
         this.load.image('door', './door.png');
         this.load.image('door2', './door2.jpg');
+        this.load.image('radio','radio.png');
 
         this.load.image('zone', 'zone.png');
         this.load.image('zone2','zone2.png');
