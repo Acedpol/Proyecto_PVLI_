@@ -22,6 +22,7 @@ export default class game extends levelScene {
         // Escenario: mapa
         this.createMap("Superficie", "Muebles", 'MueblesFrente', 'TileSetCaminos', 'Ambiente', 'Nivel', 'tilemap', 'ambiente');
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
+        this.map_objects = this.map.objects[0].objects; // array de objetos sacado del array de ObjectLayer's
         
         // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
         this.matter.world.on('collisionstart', function (event)  { this.scene.quitaVida(); });
@@ -55,6 +56,8 @@ export default class game extends levelScene {
         this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
         this.objects.getChildren()[2] = new door(this, 700, 1945, 'zone2');
         this.objects.getChildren()[2].scale = 0.2;
+        this.objects.getChildren()[0].x = this.map_objects[0].x; // añadido
+        this.objects.getChildren()[0].y = this.map_objects[0].y; // añadido
 
         // // colisiones player
         this.physics.add.collider( this.player, this.enemy ); // enemigos
@@ -95,10 +98,14 @@ export default class game extends levelScene {
     }
 
     setEnemies() {
-        this.enemies.getChildren()[0] = new enemy( this, 1000, 700, 'enemy', 0, 100, 1 );
-        // // wrappers: colisiones player y enemies (no se cuales o si es una capa)
+        // // filtro: colisiones player y enemies
         this.cat1 = this.matter.world.nextCategory();
-        this.playerCol.setCollisionCategory(this.cat1);
-        this.enemies.getChildren()[0].zones.getChildren()[0].setCollidesWith(this.cat1);
+        this.playerCol.setCollisionCategory(this.cat1); // capa de colisiones de player
+        var k = 0;
+        this.map_objects.forEach(elem => {
+            this.enemies.getChildren()[k] = new enemy( this, elem.x, elem.y, 'enemy', 0, 100, 1 );
+            this.enemies.getChildren()[k].zones.getChildren()[0].setCollidesWith(this.cat1);
+            k++;
+        });
     }
 }

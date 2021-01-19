@@ -57,7 +57,8 @@ export default class game extends Phaser.Scene {
         const tileset2 = this.map.addTilesetImage(tileName2, tileZone);
         this.groundLayer = this.map.createStaticLayer(layer1, [tileset]).setDepth(-2);
         this.immovableLayer = this.map.createStaticLayer(layer2, [tileset2]).setDepth(2);
-        this.backLayer = this.map.createStaticLayer(layer3, [tileset2]).setDepth(-1);    
+        this.backLayer = this.map.createStaticLayer(layer3, [tileset2]).setDepth(-1);  
+         
         // // definición de colisiones:
         this.groundLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
         this.immovableLayer.setCollisionByProperty({collider : true}); // -> con propiedad en el editor
