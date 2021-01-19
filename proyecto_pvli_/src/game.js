@@ -53,7 +53,7 @@ export default class game extends levelScene {
         }
 
         // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
-        this.matter.world.on('collisionstart', function (event)  { this.player.addOrRemoveLife(-10) });
+        this.matter.world.on('collisionstart', function (event) { this.dealHealth(-10); });
         this.cat1 = this.matter.world.nextCategory();
         this.playerCol.setCollisionCategory(this.cat1);
 
@@ -94,6 +94,10 @@ export default class game extends levelScene {
     
     movePlayerCol() {
         this.playerCol.setPosition(this.player.x,this.player.y);
+    }
+
+    dealHealth(vida){
+        this.player.addOrRemoveLife(vida);
     }
 
     // ----------- SETTERS -------------

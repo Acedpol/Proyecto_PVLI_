@@ -6,7 +6,8 @@ export default class zone extends Phaser.Physics.Matter.Sprite {
         this.polygonsize = 100;
 
         //this.setOrigin(0,0);
-        this.setScale(0.25,0.25);
+        this.setScale(1.7, 1.7);
+        this.setAlpha(0.6);
         this.setPolygon(this.polygonsize,3);
         //this.body.setScale(this.width,this.height);
         // console.log(this.body);
