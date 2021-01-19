@@ -24,7 +24,7 @@ export default class game extends levelScene {
         this.createMap("Superficie", "Muebles", 'MueblesFrente', 'TileSetCaminos', 'Ambiente', 'Nivel', 'tilemap', 'ambiente');
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
         //this.add.image(350,249,"radio");
-        this.radio=new radio(this,350, 250, "durationRadio",100);
+        this.radio=new radio(this,350, 225, "durationRadio",100);
 
         this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
  
