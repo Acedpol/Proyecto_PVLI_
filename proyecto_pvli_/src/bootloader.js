@@ -24,6 +24,7 @@ class bootloader extends Phaser.Scene {
         this.load.image('backmenu', './backmenu.png');
         this.load.image('retry', './retry.png');
         this.load.image('endtitle', './endtitle.png');
+        this.load.image('losstitle', './losstitle.png');
         this.load.image('adaptacion', './adaptacion.png');
 
         this.load.image('zone', 'zone.png');
