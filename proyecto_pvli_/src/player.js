@@ -27,6 +27,7 @@ export default class player extends Phaser.GameObjects.Sprite {
     setCols_Stage(scene) {
         scene.playerCol = scene.matter.add.sprite(scene.player.x, scene.player.y, 'player', null, {label:'playerCol'});
         scene.playerCol.setVisible(false);
+        scene.playerCol.setFixedRotation();
         scene.physics.add.collider(scene.player, scene.enemy); // enemigos
         scene.physics.add.overlap(scene.player, scene.objects, (o1, o2) => { o2.catchObject() }); // objetos
     }

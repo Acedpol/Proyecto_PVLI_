@@ -46,7 +46,7 @@ export default class zone extends Phaser.Physics.Matter.Sprite {
 
     move() {
         this.x=this.scene.enemies.getChildren()[this.enemType].x;
-        this.y=this.scene.enemies.getChildren()[this.enemType].y+(this.scene.enemies.getChildren()[0].height/2); 
+        this.y=this.scene.enemies.getChildren()[this.enemType].y + (this.scene.enemies.getChildren()[this.enemType].height/2); 
     }
 
     changeAngle() {

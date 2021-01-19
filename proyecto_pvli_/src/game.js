@@ -34,14 +34,11 @@ export default class game extends levelScene {
         for (const objeto of this.map.getObjectLayer('capaObjetos').objects) {
             switch(objeto.name){
                 case 'player':
-                    this.player = new player(this, objeto.x, objeto.y, 'player');
-                    this.player.setCols_Scene(this);
-                    this.player.setCols_Stage(this);
+                    this.setPlayer(objeto.x, objeto.y);
                     break;
                 case 'enemigo': 
-                    this.enemies.add(new enemy(this, objeto.x, objeto.y, 'enemy',
-                    objeto.properties[0].value, objeto.properties[1].value, objeto.properties[2].value, enemycount), true);
-                    this.zones.getChildren()[enemycount].setCollidesWith(this.cat1);
+                    this.setEnemies(objeto.x, objeto.y, objeto.properties[0].value,
+                    objeto.properties[1].value, objeto.properties[2].value, enemycount);
                     enemycount++;
                     break;
                 case 'key':
@@ -60,7 +57,6 @@ export default class game extends levelScene {
         }
 
         this.playerCol.setCollisionCategory(this.cat1);
-
 
         // Player / Jugador : abuelo
         //this.setPlayer();
@@ -91,8 +87,6 @@ export default class game extends levelScene {
         this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
         this.objects.getChildren()[2] = new door(this, 500, 2050, 'door');
         this.objects.getChildren()[2].scale = 0.2;
-        this.objects.getChildren()[0].x = this.map_objects[0].x; // añadido
-        this.objects.getChildren()[0].y = this.map_objects[0].y; // añadido
 
         // Para abrir puertas (usado en door.js)
         this.keyZ = this.input.keyboard.addKey('Z');
@@ -110,8 +104,8 @@ export default class game extends levelScene {
 
     // ----------- SETTERS -------------
 
-    setPlayer() {
-        this.player = new player(this, 350, 2050, "player");
+    setPlayer(x, y) {
+        this.player = new player(this, x, y, "player");
         this.player.setCols_Scene(this);
         this.player.setCols_Stage(this);
     }
@@ -123,15 +117,10 @@ export default class game extends levelScene {
         this.physics.add.overlap(this.player, this.platero, event => { this.scene.start('mainMenu') } );
     }
 
-    setEnemies() {
+    setEnemies(x, y, dir, dist, typeMov, enemycount) {
         // // filtro: colisiones player y enemies
-        this.cat1 = this.matter.world.nextCategory();
-        this.playerCol.setCollisionCategory(this.cat1); // capa de colisiones de player
-        var k = 0;
-        this.map_objects.forEach(elem => {
-            this.enemies.getChildren()[k] = new enemy( this, elem.x, elem.y, 'enemy', 0, 100, 1 );
-            this.enemies.getChildren()[k].zones.getChildren()[0].setCollidesWith(this.cat1);
-            k++;
-        });
+        this.enemies.add(new enemy(this, x, y, 'enemy',
+        dir, dist, typeMov, enemycount), true);
+        this.zones.getChildren()[enemycount].setCollidesWith(this.cat1);
     }
 }
