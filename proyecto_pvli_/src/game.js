@@ -24,10 +24,6 @@ export default class game extends levelScene {
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
         this.map_objects = this.map.objects[0].objects; // array de objetos sacado del array de ObjectLayer's
         this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
-        
-        // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
-        this.matter.world.on('collisionstart', function (event)  { this.scene.quitaVida(); });
-        this.cat1 = this.matter.world.nextCategory();
 
         var enemycount = 0;
 
@@ -56,6 +52,9 @@ export default class game extends levelScene {
             }
         }
 
+        // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
+        this.matter.world.on('collisionstart', function (event)  { this.player.addOrRemoveLife(-10) });
+        this.cat1 = this.matter.world.nextCategory();
         this.playerCol.setCollisionCategory(this.cat1);
 
         // Player / Jugador : abuelo

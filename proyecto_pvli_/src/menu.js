@@ -51,6 +51,7 @@ export default class menu extends levelScene {
             setTimeout(() => {
             this.scene.start(this.trigger.escena);  
             }, 500);
+            this.player.walk.stop();
             this.scene.stop();
         }
         //console.log(this.player.health);    
