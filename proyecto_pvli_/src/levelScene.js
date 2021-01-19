@@ -11,8 +11,8 @@ import healthitem from './healthitem.js';
 export default class game extends Phaser.Scene {
     constructor(scenekey) {
         super({ key: scenekey, physics:{
-            arcade: { debug:true, },
-            matter:{debug:true,gravity:0},
+            arcade: { debug:false, },
+            matter:{debug:false,gravity:0},
         } });
     }
     

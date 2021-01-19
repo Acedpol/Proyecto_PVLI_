@@ -27,14 +27,6 @@ export default class enemy extends Phaser.GameObjects.Sprite {
 
         this.scene.zones.getChildren()[enemycount] = new zone(this.scene, x,  y, 'zone', 100, this.dir, enemycount);
         this.scene.zones.getChildren()[enemycount].setCollisionCategory(this.scene.cat1);
-
-        //this.zones.getChildren()[0].setPolygon(3,0);
-        /*this.zones = this.scene.physics.add.group({key:'zone', frameQuantity: 0});
-        this.zones.getChildren()[0] = new zone(this.scene,this,this.x,this.y, 'zone');*/
-
-        //this.zone=new zone(this.scene,this,this.x,this.y, this.texture2);
-
-        //this.scene.physics.add.overlap(this.scene.player,this.zones,this.quitaVida());
     }
 
     preUpdate(time,delta) {

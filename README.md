@@ -57,6 +57,10 @@ GenerationGamesUCM@gmail.com
 Cantidades:
 **Personajes principales**: 2, Platero y JRJ.
 
+![Captura del menú][capturamenu]
+
+![Captura de Juego][capturadejuego]
+
 Hitos:
 
 Hito 0: 14 de octubre de 2020
@@ -195,6 +199,9 @@ otros autores de la época, noticias o imágenes relacionadas con los acontecimi
 momento.
 El mapa estará construido con lugares que aparecen en la novela, como el pueblo de
 Moguer, la ciudad, granjas, campo, ríos, montañas, cuevas, etc.
+Los sprites de los objetos del nivel hechos por uno de los miembros del grupo, Cristian,
+además de haber hecho también el tileset del suelo y hierba. Se cuenta con una variedad 
+de sprites mayor a la que posee ahora el juego.
 
 **Música utilizada**
 Menú principal: Stasis by Steve Oxen.
@@ -252,4 +259,5 @@ su áng
 [Nueva Arquitectura]: https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=ArquitecturaPlaterosTale.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1fdzaqrhfvPPrEq2kRV5FCk7kSp_H8JpD%26export%3Ddownload "Visualizador web"
 [PNG Arquitectura antigua]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/Arquitectura%20Platero%20y%20Yo.png
 [PNG Nueva Arquitectura]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/ArquitecturaPlaterosTale_1.1.png
-
+[capturamenu]: assets/images/captura.png "Captura de Menu"
+[capturajuego]: assets/images/juego.png "Captura de Juego"
