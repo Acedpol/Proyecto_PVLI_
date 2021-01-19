@@ -9,8 +9,10 @@ export default class healthitem extends item {
     catchObject(){
         if(this.health < 0) this.pickupsound = 'damagesound';
         else this.pickupsound = 'healsound';
+        
+        if(this.scene.player.addOrRemoveLife(this.health)){
         this.scene.sound.play(this.pickupsound);
-        this.scene.player.addOrRemoveLife(this.health);
         this.destroy();
+        }
     }
 }

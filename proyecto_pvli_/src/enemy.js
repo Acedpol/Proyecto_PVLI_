@@ -2,7 +2,7 @@ import zone from './zone.js';
 export default class enemy extends Phaser.GameObjects.Sprite {
     //dir=0->Abajo, dir=1->Arriba, dir=2->Izquierda, dir=3->Derecha
     //typeMov=0->horizontal, typeMov=1->vertical
-    constructor(scene, x, y, texture,dir,dist,typeMov) {
+    constructor(scene, x, y, texture,dir,dist,typeMov, enemycount) {
         super(scene, x, y, texture,dir,dist,typeMov, 0);
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
@@ -25,8 +25,7 @@ export default class enemy extends Phaser.GameObjects.Sprite {
         this.x = x;
         this.y = y;
 
-        this.zones = this.scene.physics.add.group({key: 'zone', frameQuantity: 0});
-        this.zones.getChildren()[0] = new zone(this.scene, this.x,  this.y+(this.height/2), 'zone', 100, this.dir, 0);
+        this.scene.zones.getChildren()[enemycount] = new zone(this.scene, this.x,  this.y+(this.height/2), 'zone', 100, this.dir, 0);
 
         //this.zones.getChildren()[0].setPolygon(3,0);
         /*this.zones = this.scene.physics.add.group({key:'zone', frameQuantity: 0});
