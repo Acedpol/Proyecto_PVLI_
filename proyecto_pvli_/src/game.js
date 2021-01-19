@@ -9,6 +9,7 @@ import door from './door.js';
 import zone from './zone.js'
 import healthitem from './healthitem.js';
 import levelScene from './levelScene.js';
+import radio from './radio.js';
 
 export default class game extends levelScene {
     constructor() {
@@ -22,6 +23,7 @@ export default class game extends levelScene {
         // Escenario: mapa
         this.createMap("Superficie", "Muebles", 'MueblesFrente', 'TileSetCaminos', 'Ambiente', 'Nivel', 'tilemap', 'ambiente');
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
+        this.radio=new radio(this,350, 250, "durationRadio",100);
         this.map_objects = this.map.objects[0].objects; // array de objetos sacado del array de ObjectLayer's
         this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
 
@@ -53,9 +55,11 @@ export default class game extends levelScene {
         }
 
         // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
-        this.matter.world.on('collisionstart', function (event) { this.dealHealth(-10); });
+        
         this.cat1 = this.matter.world.nextCategory();
         this.playerCol.setCollisionCategory(this.cat1);
+        this.zones.getChildren()[0].setCollidesWith(this.cat1);
+        this.matter.world.on('collisionstart', function (event) { this.scene.dealHealth(-10); });
 
         // Player / Jugador : abuelo
         //this.setPlayer();
