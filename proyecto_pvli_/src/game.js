@@ -23,10 +23,11 @@ export default class game extends levelScene {
         // Escenario: mapa
         this.createMap("Superficie", "Muebles", 'MueblesFrente', 'TileSetCaminos', 'Ambiente', 'Nivel', 'tilemap', 'ambiente');
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
-        this.radio=new radio(this,350, 250, "durationRadio",100);
-        this.map_objects = this.map.objects[0].objects; // array de objetos sacado del array de ObjectLayer's
-        this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
+        //this.radio=new radio(this,350, 250, "durationRadio",100);
 
+        this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
+ 
+        this.cat1 = this.matter.world.nextCategory();
         var enemycount = 0;
 
         for (const objeto of this.map.getObjectLayer('capaObjetos').objects) {
@@ -55,31 +56,17 @@ export default class game extends levelScene {
         }
 
         // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
-        
-        this.cat1 = this.matter.world.nextCategory();
         this.playerCol.setCollisionCategory(this.cat1);
-        this.zones.getChildren()[0].setCollidesWith(this.cat1);
-        this.matter.world.on('collisionstart', function (event) { this.scene.dealHealth(-10); });
+
+        this.matter.world.on('collisionstart', function (event) { 
+            this.scene.dealHealth(-10);
+            this.scene.sound.play('damagesound');
+        });
 
         // Player / Jugador : abuelo
-        //this.setPlayer();
-
         // Enemigos : anciano
-        //this.setEnemies();
         // Final: Platero, (...) con un trotecillo alegre
         this.setPlatero();
-
-        // this.createMap("Superficie", "Muebles", 'Hogar', 'tilemap');
-
-        /*  this.shape=this.cache.json.get('zonePhy');
-        console.log(this.shape);*/
-        
-        // this.enemy=new enemy(this,400,150,"enemy",0,0,0,"zone");
-        /* this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
-        this.zones.getChildren()[0] = new zone(this, this.enemies.getChildren()[0].x,  this.enemies.getChildren()[0].y+(this.enemies.getChildren()[0].height/2),'zone', 100, this.enemies.getChildren()[0].dir, 0);*/
-  
-        // this.debugCollisionsMapa();
-
 
         // Vista o punto de vista: cámara
         this.cameras.main.startFollow(this.player);
@@ -123,6 +110,5 @@ export default class game extends levelScene {
         // // filtro: colisiones player y enemies
         this.enemies.add(new enemy(this, x, y, 'enemy',
         dir, dist, typeMov, enemycount), true);
-        this.zones.getChildren()[enemycount].setCollidesWith(this.cat1);
     }
 }
