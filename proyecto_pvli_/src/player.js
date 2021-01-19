@@ -16,9 +16,19 @@ export default class player extends Phaser.GameObjects.Sprite {
         this.y = y;
         this.pause = false;
         this.setDepth(1);
-        // this.create(scene);
-    }
 
+        this.isWalking = false;
+        const config = {
+            mute:false,
+            volume: 0.4,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0,
+        }
+        this.walk = this.scene.sound.add('walkingsound', config);
+    }
+    
     setCols_Scene(scene) {
         scene.physics.add.collider(scene.player, scene.groundLayer); // terreno
         scene.physics.add.collider(scene.player, scene.immovableLayer); // muebles
@@ -54,8 +64,23 @@ export default class player extends Phaser.GameObjects.Sprite {
 
         let [velocityX, velocityY] = [this.body.velocity.x, this.body.velocity.y];
 
-        this.animations(velocityX, velocityY);   
+        this.animations(velocityX, velocityY); 
+
+        if((this.body.velocity.x != 0 || this.body.velocity.y != 0) && !this.isWalking) {
+            this.walk.play();
+            this.isWalking = true;
+        }
+        else if(this.body.velocity.x === 0 && this.body.velocity.y === 0)
+        {
+            this.isWalking = false;
+            this.walk.stop();
+        }
+        else
+        {
+            this.isWalking = true;
+        }
     }
+    
 
     animations(velocityX, velocityY) {
         if(velocityX === 0) {
