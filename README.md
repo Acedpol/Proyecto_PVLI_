@@ -59,7 +59,7 @@ Cantidades:
 
 ![Captura del menú][capturamenu]
 
-![Captura de Juego][capturadejuego]
+![Captura de Juego][capturajuego]
 
 Hitos:
 
