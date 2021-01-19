@@ -44,6 +44,7 @@ class bootloader extends Phaser.Scene {
         this.load.audio('damagesound', './damage.mp3');
         this.load.audio('healsound', './healsound.mp3');   
         this.load.audio('pickupsound', './pickup.mp3');
+        this.load.audio('dooropen', './dooropen.mp3');
         
         this.load.on('complete', () => {
             console.log('Load complete');

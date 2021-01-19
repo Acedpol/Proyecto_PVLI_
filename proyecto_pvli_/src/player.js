@@ -22,6 +22,7 @@ export default class player extends Phaser.GameObjects.Sprite {
     setCols_Scene(scene) {
         scene.physics.add.collider(scene.player, scene.groundLayer); // terreno
         scene.physics.add.collider(scene.player, scene.immovableLayer); // muebles
+        scene.physics.add.collider(scene.player, scene.backLayer);
     }
 
     setCols_Stage(scene) {
