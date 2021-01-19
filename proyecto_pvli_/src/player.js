@@ -20,7 +20,7 @@ export default class player extends Phaser.GameObjects.Sprite {
         this.isWalking = false;
         const config = {
             mute:false,
-            volume: 1,
+            volume: 0.4,
             detune: 0,
             seek: 0,
             loop: true,
