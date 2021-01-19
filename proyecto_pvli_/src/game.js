@@ -23,7 +23,7 @@ export default class game extends levelScene {
         // Escenario: mapa
         this.createMap("Superficie", "Muebles", 'MueblesFrente', 'TileSetCaminos', 'Ambiente', 'Nivel', 'tilemap', 'ambiente');
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
-        //this.radio=new radio(this,350, 250, "durationRadio",100);
+        this.radio=new radio(this,350, 250, "durationRadio",100);
 
         this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
  
@@ -74,6 +74,7 @@ export default class game extends levelScene {
 
         // Para abrir puertas (usado en door.js)
         this.keyZ = this.input.keyboard.addKey('Z');
+        this.keyX = this.input.keyboard.addKey('X');
         this.sound.play('dooropen');
     }
 
@@ -88,7 +89,9 @@ export default class game extends levelScene {
     }
 
     dealHealth(vida){
+        if(this.radio.on==false){
         this.player.addOrRemoveLife(vida);
+        }
     }
 
     // ----------- SETTERS -------------

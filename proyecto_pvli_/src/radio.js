@@ -18,16 +18,18 @@ export default class radio extends Phaser.GameObjects.Sprite {
         this.displayWidth=this.duration*150/100;
     }
     loseDuration(){
-        if(this.active==true&& this.duration>0){
+        if(this.on==true&& this.duration>0){
             this.duration--;
         }
     }
     activeRadio(){
-        if(this.active==false && this.duration>0 && this.scene.keyX.isDown){
-            this.active=true;
+        if(this.on==false && this.duration>0 && this.scene.keyX.isDown){
+            this.on=true;
+        
         }
-        else if(this.active==true && this.duration>0 && this.scene.keyX.isDown){
-            this.active=false;
+        else if(this.on==true && this.duration>0 && this.scene.keyX.isDown){
+            this.on=false;
         }
+        
     }
 }
