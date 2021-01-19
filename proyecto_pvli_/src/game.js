@@ -50,7 +50,9 @@ export default class game extends levelScene {
                     this.objects.add(new healthitem(this, objeto.x, objeto.y, 'items',
                     objeto.properties[1].value, objeto.properties[0].value));
                     break;
-                
+                case 'batery':
+                    this.objects.add(new batery(this, objeto.x, objeto.y, 'items', 17));
+                    break;
                 
             }
         }

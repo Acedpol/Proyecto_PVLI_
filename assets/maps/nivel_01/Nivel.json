@@ -933,6 +933,105 @@
                  "width":18,
                  "x":560,
                  "y":1280
+                }, 
+                {
+                 "height":0,
+                 "id":81,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":972,
+                 "y":1718
+                }, 
+                {
+                 "height":0,
+                 "id":82,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":226,
+                 "y":1756
+                }, 
+                {
+                 "height":0,
+                 "id":83,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1332,
+                 "y":2142
+                }, 
+                {
+                 "height":0,
+                 "id":84,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":720,
+                 "y":1226
+                }, 
+                {
+                 "height":0,
+                 "id":85,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":234,
+                 "y":270
+                }, 
+                {
+                 "height":0,
+                 "id":90,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1444,
+                 "y":894
+                }, 
+                {
+                 "height":0,
+                 "id":91,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":786,
+                 "y":430
+                }, 
+                {
+                 "height":0,
+                 "id":92,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":786,
+                 "y":430
+                }, 
+                {
+                 "height":0,
+                 "id":93,
+                 "name":"batery",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":296,
+                 "y":2118
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -955,10 +1054,10 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":81,
+ "nextobjectid":94,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"2020.11.25",
+ "tiledversion":"1.4.3",
  "tileheight":16,
  "tilesets":[
         {
