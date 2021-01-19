@@ -84,6 +84,7 @@ export default class game extends levelScene {
 
         // Para abrir puertas (usado en door.js)
         this.keyZ = this.input.keyboard.addKey('Z');
+        this.sound.play('dooropen');
     }
 
     update(time, delta) {
