@@ -11,6 +11,7 @@ export default class player extends Phaser.GameObjects.Sprite {
         this.body.setMaxSpeed(this.speed);
         this.cursors = this.scene.input.keyboard.createCursorKeys();
         this.health = 100;
+        this.maxHealth=this.health;
         this.lives = 3;
         this.x = x;
         this.y = y;
