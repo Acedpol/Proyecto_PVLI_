@@ -2,6 +2,7 @@ import bootloader from './bootloader.js';
 import game from './game.js';
 import menu from './menu.js';
 import menuprincipal from './menuprincipal.js';
+import endscene from './endscene.js';
 
 const config = {
     title: "proyecto_pvli_", //
@@ -37,7 +38,7 @@ const config = {
         
       
     },
-    scene: [bootloader, menuprincipal, menu, game]
+    scene: [bootloader, menuprincipal, menu, game, endscene]
 };
 
 new Phaser.Game(config);

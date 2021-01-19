@@ -8,6 +8,7 @@ export default class botones extends Phaser.Scene{
     }
     
     CrearBoton(button){
+        this.cameras.main.fadeIn(1250);
         button.setInteractive();
         button.on("pointerover", () => {
             button.setScale(1.25, 1.25);
