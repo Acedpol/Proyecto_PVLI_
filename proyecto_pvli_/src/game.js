@@ -62,8 +62,10 @@ export default class game extends levelScene {
         this.playerCol.setCollisionCategory(this.cat1);
 
         this.matter.world.on('collisionstart', function (event) { 
+            if(this.scene.radio.on==false && this.scene.player.health>0){
             this.scene.dealHealth(-10);
             this.scene.sound.play('damagesound');
+            }
         });
 
         // Player / Jugador : abuelo
@@ -92,9 +94,9 @@ export default class game extends levelScene {
     }
 
     dealHealth(vida){
-        if(this.radio.on==false){
+        
         this.player.addOrRemoveLife(vida);
-        }
+        
     }
 
     // ----------- SETTERS -------------
