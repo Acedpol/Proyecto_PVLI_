@@ -81,16 +81,9 @@ export default class game extends levelScene {
         // Vista o punto de vista: cámara
         this.cameras.main.startFollow(this.player);
         this.cameras.main.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
-        
-        // Creación manual de objetos (tendrán que estar en Tiled)
-        this.objects.getChildren()[0] = new batery(this, 400, 2050, 'items', 18);
-        this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
-        this.objects.getChildren()[2] = new door(this, 500, 2050, 'door');
-        this.objects.getChildren()[2].scale = 0.2;
 
         // Para abrir puertas (usado en door.js)
         this.keyZ = this.input.keyboard.addKey('Z');
-        this.sound.play('dooropen');
     }
 
     update(time, delta) {
