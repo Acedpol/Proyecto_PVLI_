@@ -5,6 +5,11 @@ export default class radio extends Phaser.GameObjects.Sprite {
         this.displayWidth = 150;
         this.setScrollFactor(0);
         this.displayHeight = 20;
+        this.r=this.scene.add.image(x-20,y,'radio').setDepth(11);
+        this.r.displayOriginX = 0;
+        this.r.displayHeight = 20;
+        this.r.displayWidth = 130;
+        this.r.setScrollFactor(0);
         this.duration=n;
         this.maxDuration=this.duration;
         this.on=false;
@@ -23,13 +28,19 @@ export default class radio extends Phaser.GameObjects.Sprite {
         }
     }
     activeRadio(){
-        if(this.on==false && this.duration>0 && this.scene.keyX.isDown){
-            this.on=true;
-        
-        }
-        else if(this.on==true && this.duration>0 && this.scene.keyX.isDown){
+        if(this.duration<=0){
             this.on=false;
         }
+        else{
+            if(this.on==false && this.duration>0 && this.scene.keyX.isDown){
+                this.on=true;
+        
+            }
+            else if(this.on==true && this.duration>0 && this.scene.keyX.isDown){
+                this.on=false;
+            }
+        }
+        
         
     }
 }
