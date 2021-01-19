@@ -85,6 +85,9 @@ export default class game extends levelScene {
 
     update(time, delta) {
         this.movePlayerCol();
+        if(this.player.health<=0){
+            this.scene.start('pantallamuerte');
+        }
     }
 
     // ----------- MÉTODOS AUXILIARES

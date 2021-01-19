@@ -28,4 +28,5 @@ export default class pantallamuerte extends botones{
         this.CambioEscena(this.backtomenu, 'menuprincipal');
         this.CambioEscena(this.retry, 'menu');
     }
+}
 
