@@ -71,58 +71,75 @@ Hito 3: 18 de enero de 2021
 
 
 **Descripción**
+
 Juego de Aventura 2D con vista cenital centrada en el protagonista. Es un videojuego con
 movimiento de 8 direcciones situado en Moguer, el pueblo natal del autor Juan Ramón
 Jiménez.
+
 El protagonista es un hombre solitario conocido por los niños del pueblo como ‘El loco’ y es
 el dueño de un burro llamado Platero, el único en quien confía y con quien más amistad
 tiene. Durante el juego, se dedicará a buscar a Platero por todo el pueblo mientras esquiva
 a los habitantes de Moguer.
+
 El jugador podrá seleccionar un único modo de juego, el modo historia, en el que avanzará
 por los distintos episodios de la novela buscando a Platero en cada nivel. Cuenta con una
 serie de objetos y habilidades que le ayudarán a lo largo de los niveles, como el poder
 inspeccionar sobre pistas de Platero, una radio para evadir enemigos o una linterna para
 iluminar zonas oscuras.
+
 El jugador superará el nivel encontrando a Platero y perderá al llegar su barra de autoestima
 a 0, el equivalente a perder la vida. Cuando haya esperanzas de encontrar a su amigo,
 recupera fuerzas y le sube la autoestima.
 **Versiones del documento**
 **1.0 Preproducción** - 20/10/2020
 **1.1 Hito 01** - 23/11/2020
+
 ### **Índice**
+
 **I. Aspectos generales**
 • Vista general
 • Relato del primer nivel
+
 **II. Menús y modos de juego**
 • Configuración
 • Interfaz y control
 o Interfaz
 o Controles
+
 **III. Jugabilidad**
 • Mecánicas
 • Dinámicas
 • Estética
+
 **IV. Contenidos**
 • Historia
 • Niveles
 • Personajes
 • Objetos y enemigos
+
 **V. Referencias**
+
 1. **Aspectos generales**
+
 1.2** Relato del primer nivel**
 Al acceder al nivel 1, el jugador aparecerá en la calle del pueblo frente a su casa en una de
 las esquinas del mapa. El jugador empezará con algo de dinero y con una tienda al lado de
 la salida, donde podrá comprar baterías para la radio. Tendrá que recorrer el laberinto
 sorteando a los vecinos y recogiendo pistas para encontrar a Platero. Además tendrá que
 buscar llaves para poder abrir puertas y acceder a nuevos caminos.
+
 2. **Menús y modos de juego**
+
 2.1 **Configuración**
 Al iniciar el juego, se mostrará al personaje protagonista en su casa, este entorno hace de
 menú de inicio. El jugador podrá desplazarse y atravesar las puertas de la habitación para
 acceder a los siguientes submenús: opciones, controles, selección de nivel y créditos.
 Todos son habitaciones de la casa con la información correspondiente.
+
 2.2 **Interfaz y control**
+
 2.2.1. **Interfaz**
+
 **MENÚ PRINCIPAL:**
 - Opciones: ajuste de sonido.
 - Controles: muestreo de los controles que se van a usar.
@@ -131,13 +148,15 @@ Todos son habitaciones de la casa con la información correspondiente.
 **DENTRO DEL JUEGO:**
 - Pausa: opciones o reanudar.
 - Inventario: menú para ver los objetos.
-- Habilidades: inspección, radio y linterna. (ON/OFF y tiempo hasta bloqueo)
+- Habilidades: inspección y radio. (ON/OFF y tiempo hasta bloqueo)
 **2.2.2. Control**
 - Movimiento con teclas “WASD” y combinaciones de dos teclas para las
 diagonales.
 - Ratón: interacción con inventario (y recogida de objetos).
 - Inspección, radio y linterna: activar mediante ratón o con tecla directa.
+
 **3. Jugabilidad**
+
 **3.1.Mecánicas**
 - Movimiento, 8 direcciones.
 - Autoestima, como barra de vida.
@@ -179,8 +198,10 @@ Moguer, la ciudad, granjas, campo, ríos, montañas, cuevas, etc.
 
 **Música utilizada**
 Menú principal: Stasis by Steve Oxen.
+Sonidos: FreeSound.org.
 
 4. **Contenidos**
+
 4.1. **Historia**
 Juan Ramón Jiménez es un escritor que vive en el pueblo de Moguer, Huelva, y su mejor
 amigo es su burro Platero. Todos los días sale en su búsqueda para que le alegre el día,
@@ -207,19 +228,14 @@ su áng
 
 4.4. **Objetos y enemigos**
 - Objetos Plateriños
-- Fotografías
 - Herraduras
-- Riendas
-- Periódicos con noticias sobre un burro suelto
 - Objetos No Plateriños
 - Periódicos con noticias trágicas de la época
 - Radio dramática
 - Objetos no dañinos, útiles
 - Radio del protagonista
-- Linterna
-- Baterías, utilizadas para recargar tanto la radio como la linterna
-- Monedas, sirven para comprar baterías, esparcidas por el mapa
-- Objetos para vender
+- Llaves
+- Baterías, utilizadas para recargar la radio.
 
 5. **Referencias**
 - Platero y Yo.
