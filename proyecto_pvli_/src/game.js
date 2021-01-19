@@ -22,15 +22,50 @@ export default class game extends levelScene {
         // Escenario: mapa
         this.createMap("Superficie", "Muebles", 'MueblesFrente', 'TileSetCaminos', 'Ambiente', 'Nivel', 'tilemap', 'ambiente');
         this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
+        this.zones = this.physics.add.group({key: 'zone', frameQuantity: 0});
         
         // waitter: cuando se inicia la colisión, resta vida (todo lo que sea matter)
         this.matter.world.on('collisionstart', function (event)  { this.scene.quitaVida(); });
-        
+        this.cat1 = this.matter.world.nextCategory();
+
+        var enemycount = 0;
+
+        for (const objeto of this.map.getObjectLayer('capaObjetos').objects) {
+            switch(objeto.name){
+                case 'player':
+                    this.player = new player(this, objeto.x, objeto.y, 'player');
+                    this.player.setCols_Scene(this);
+                    this.player.setCols_Stage(this);
+                    break;
+                case 'enemigo': 
+                    this.enemies.add(new enemy(this, objeto.x, objeto.y, 'enemy',
+                    objeto.properties[0].value, objeto.properties[1].value, objeto.properties[2].value, enemycount), true);
+                    this.zones.getChildren()[enemycount].setCollidesWith(this.cat1);
+                    enemycount++;
+                    break;
+                case 'key':
+                    this.objects.add(new key(this, objeto.x, objeto.y, 'items', 7));
+                    break;
+                case 'door':
+                    this.objects.add(new door(this, objeto.x, objeto.y, objeto.properties[0].value));
+                    break;
+                case 'healthitem':
+                    this.objects.add(new healthitem(this, objeto.x, objeto.y, 'items',
+                    objeto.properties[1].value, objeto.properties[0].value));
+                    break;
+                
+                
+            }
+        }
+
+        this.playerCol.setCollisionCategory(this.cat1);
+
+
         // Player / Jugador : abuelo
-        this.setPlayer();
+        //this.setPlayer();
 
         // Enemigos : anciano
-        this.setEnemies();
+        //this.setEnemies();
         // Final: Platero, (...) con un trotecillo alegre
         this.setPlatero();
 
@@ -53,12 +88,12 @@ export default class game extends levelScene {
         // Creación manual de objetos (tendrán que estar en Tiled)
         this.objects.getChildren()[0] = new batery(this, 400, 2050, 'items', 18);
         this.objects.getChildren()[1] = new key(this, 450, 2050, 'items', 7);
-        this.objects.getChildren()[2] = new door(this, 700, 1945, 'zone2');
+        this.objects.getChildren()[2] = new door(this, 500, 2050, 'door');
         this.objects.getChildren()[2].scale = 0.2;
 
         // // colisiones player
         this.physics.add.collider( this.player, this.enemy ); // enemigos
-        this.physics.add.overlap( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
+        this.physics.add.collider( this.player, this.objects, (o1, o2) => { o2.catchObject() } ); // objetos
         this.physics.add.collider( this.player, this.groundLayer); // terreno
         this.physics.add.collider( this.player, this.immovableLayer); // muebles
 
