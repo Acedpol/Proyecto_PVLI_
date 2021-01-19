@@ -22,6 +22,7 @@ export default class endscene extends botones{
         this.victorytitle = this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.2, 'endtitle').setDepth(1);
         this.victorytitle.setScale(1.5, 1.5);
         this.playButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, 'backmenu').setDepth(1);
+        this.add.image(0, 300, 'adaptacion').setOrigin(0).setScale(0.5, 0.5);
 
         this.CambioEscena(this.playButton, 'menuprincipal');
     }
