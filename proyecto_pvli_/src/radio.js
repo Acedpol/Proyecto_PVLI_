@@ -14,7 +14,10 @@ export default class radio extends Phaser.GameObjects.Sprite {
         this.maxDuration=this.duration;
         this.on=false;
         this.setDepth(11);
-        this.scene.add.existing(this);      
+        this.scene.add.existing(this);   
+        
+        this.isSoundOn = false;
+        this.radiosound = this.scene.sound.add('radiosound', {loop: true, volume: 0.5});
     }
 
     preUpdate(time,delta) {
@@ -35,6 +38,19 @@ export default class radio extends Phaser.GameObjects.Sprite {
             this.on = (this.duration > 0 && this.scene.keyX.isDown);
         }
         
+        if(this.duration > 0 && this.scene.keyX.isDown && !this.isSoundOn) {
+            this.radiosound.play();
+            this.isSoundOn = true;
+        }
+        else if(this.scene.keyX.isUp)
+        {
+            this.isSoundOn = false;
+            this.radiosound.stop();
+        }
+        else
+        {
+            this.isSoundOn = true;
+        }
         
     }
 }
