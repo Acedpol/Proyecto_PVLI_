@@ -8,6 +8,8 @@ a { text-decoration: none; }
 
 strong { color: #000000; }
 
+p { color: #ffffff; text-align: center;}
+
 div#container {
   display: block;
   max-width: 85%;
