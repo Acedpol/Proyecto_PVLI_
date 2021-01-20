@@ -31,7 +31,6 @@ export default class enemy extends Phaser.GameObjects.Sprite {
 
     preUpdate(time,delta) {
         if(!this.pause){
-            //this.quitaVida();
             this.changeDirection();
             this.move();
             //console.log(this.scene.player.health);
