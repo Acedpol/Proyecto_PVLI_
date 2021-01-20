@@ -71,7 +71,7 @@
                  "type":"",
                  "visible":true,
                  "width":36,
-                 "x":300,
+                 "x":320,
                  "y":345
                 }, 
                 {
@@ -139,7 +139,7 @@
  "nextobjectid":22,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"2020.11.25",
+ "tiledversion":"1.4.3",
  "tileheight":16,
  "tilesets":[
         {
