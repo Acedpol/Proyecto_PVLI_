@@ -26,8 +26,10 @@ export default class zone extends Phaser.Physics.Matter.Sprite {
 
     preUpdate() {
        // this.scene.matter.add.image(100,100,'zone');
-        this.changeAngle();
-        this.move();
+        if(!this.scene.enemies.getChildren()[this.enemType].pause){
+            this.changeAngle();
+            this.move();
+        }
     }
 
     move() {
@@ -56,19 +58,20 @@ export default class zone extends Phaser.Physics.Matter.Sprite {
     }
 
     changeAngle() {
-       if(this.scene.enemies.getChildren()[this.enemType].dir == 0) {
+        this.enemydir = this.scene.enemies.getChildren()[this.enemType].dir;
+        if(this.enemydir == 0) {
            // this.body.angle=45;
             this.angle = 0;
         }
-        else if(this.scene.enemies.getChildren()[this.enemType].dir == 1) {
+        else if(this.enemydir == 1) {
             //this.body.angle=225;
             this.angle = 180;
         }
-        else if(this.scene.enemies.getChildren()[this.enemType].dir == 2) {
+        else if(this.enemydir == 2) {
            // this.body.angle=135;
             this.angle = 270;
         }
-        else if(this.scene.enemies.getChildren()[this.enemType].dir == 3) {
+        else if(this.enemydir == 3) {
             //this.body.angle=315;
             this.angle = 90;
         }
