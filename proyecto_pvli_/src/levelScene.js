@@ -16,6 +16,8 @@ export default class game extends Phaser.Scene {
         } });
     }
     
+    //Escena padre del resto de escenas de los niveles
+
     create() {
         // Grupos y vida
         this.enemies = this.physics.add.group({key: 'enemy', frameQuantity: 0});
@@ -45,6 +47,7 @@ export default class game extends Phaser.Scene {
         //this.enemy.pauseEnemy();
     }
 
+    //Método para la creacion de mapas de tiled general para todos los mapas
     createMap(layer1, layer2, layer3, tileName1, tileName2, keyMap, tileMap, tileZone) {
         // creación del mapa:
         this.map = this.make.tilemap({ 
