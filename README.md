@@ -11,6 +11,8 @@
  - En la carpeta **_assets_** se encuentran los archivos que componen el videojuego.
  
  ###### website: [visitar web][WEB]
+ 
+ ###### video-demo: [visitar canal de youtube][video]
 
  ###### GDD: [Game Design Document][GDD] - [Archivo en repositorio][GDD en repo]
  
@@ -252,6 +254,7 @@ su áng
 - Gauntlet.
 
 [logo]: assets/images/adaptacion.png "Platero's Tale"
+[video]: https://youtu.be/q81Hx4C6JRw
 [WEB]: https://acedpol.github.io/Proyecto_PVLI_/index.html "Web del Proyecto"
 [GDD]: http://acedpol.github.io/Proyecto_PVLI_/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
 [GDD en repo]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Link a la ubicación en el repositorio"
