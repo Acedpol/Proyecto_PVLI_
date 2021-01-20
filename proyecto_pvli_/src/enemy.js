@@ -41,7 +41,7 @@ export default class enemy extends Phaser.GameObjects.Sprite {
     changeDirection() {
         if((this.typeMov == 0 && (this.x == this.distMax || this.x == this.distMin)) 
             || (this.typeMov == 1 && (this.y == this.distMax || this.y == this.distMin)))
-            {
+            {   
                 this.speed = -this.speed;
                 if(this.dir == 0) {
                     this.dir = 1;
@@ -66,33 +66,6 @@ export default class enemy extends Phaser.GameObjects.Sprite {
             else { this.y = this.y + this.speed; }
         }
     }
-
-    /*
-    quitaVida(){
-        if(this.dir == 0) {
-            if(!this.pause && this.scene.player.y < this.y + this.area && this.scene.player.y > this.y && this.scene.player.x > this.x-5&&this.scene.player.x<this.x+5){
-                this.scene.player.health--;
-            }
-        }
-        else if(this.dir == 1) {
-          if(!this.pause && this.scene.player.y>this.y-this.area && this.scene.player.y<this.y && this.scene.player.x>this.x-5&&this.scene.player.x<this.x+5){
-            this.scene.player.health--;
-           }
-        }
-        else if(this.dir==2){
-          if(!this.pause && this.scene.player.x>this.x-this.area && this.scene.player.x<this.x && this.scene.player.y>this.y-5&&this.scene.player.y<this.y+5){
-            this.scene.player.health--;
-           }
-        }
-        else if(this.dir==3){
-          if(!this.pause &&this.scene.player.x<this.x+this.area && this.scene.player.x>this.x && this.scene.player.y>this.y-5&&this.scene.player.y<this.y+5){
-            this.scene.player.health--;
-           }
-        }
-        this.scene.player.health--;
-      }
-      */
-    
     
     pauseEnemy() {
         this.pause = !this.pause;

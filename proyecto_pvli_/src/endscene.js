@@ -16,9 +16,9 @@ export default class endscene extends botones{
             loop: false,
             delay: 0,
         }
-        //this.sound.play('victorymusic', config);
+        this.sound.play('victorymusic', config);
 
-        this.add.image(0, 0, 'menu').setOrigin(0);
+        this.add.image(0, 0, 'menucolor').setOrigin(0);
         this.victorytitle = this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.2, 'endtitle').setDepth(1);
         this.victorytitle.setScale(1.5, 1.5);
         this.playButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, 'backmenu').setDepth(1);

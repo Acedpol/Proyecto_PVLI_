@@ -26,6 +26,7 @@ class bootloader extends Phaser.Scene {
         this.load.image('endtitle', './endtitle.png');
         this.load.image('losstitle', './losstitle.png');
         this.load.image('adaptacion', './adaptacion.png');
+        this.load.image('menucolor', './MenuColor.png');
 
         this.load.image('zone', 'zone.png');
         this.load.image('zone2','zone2.png');
@@ -53,6 +54,7 @@ class bootloader extends Phaser.Scene {
         this.load.audio('pickupsound', './pickup.mp3');
         this.load.audio('dooropen', './dooropen.mp3');
         this.load.audio('walkingsound', './walkingsound.mp3');
+        this.load.audio('victorymusic', './victorysound.mp3');
         
         this.load.on('complete', () => {
             console.log('Load complete');
