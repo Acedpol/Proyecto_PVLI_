@@ -20,7 +20,7 @@ export default class radio extends Phaser.GameObjects.Sprite {
     preUpdate(time,delta) {
         this.loseDuration();
         this.activeRadio();
-        this.displayWidth=this.duration*150/100;
+        this.displayWidth=this.duration*150/300;
     }
     loseDuration(){
         if(this.on==true&& this.duration>0){
@@ -32,12 +32,7 @@ export default class radio extends Phaser.GameObjects.Sprite {
             this.on=false;
         }
         else{
-            if(this.on == false && this.duration>0 && Phaser.Input.Keyboard.JustDown(this.scene.keyX)){
-                this.on=true;        
-            }
-            else if(this.on == true && this.duration>0 && Phaser.Input.Keyboard.JustDown(this.scene.keyX)){
-                this.on=false;
-            }
+            this.on = (this.duration > 0 && this.scene.keyX.isDown);
         }
         
         
