@@ -153,15 +153,16 @@ Todos son habitaciones de la casa con la información correspondiente.
 - Pausa: opciones o reanudar.
 - Inventario: menú para ver los objetos.
 - Habilidades: inspección y radio. (ON/OFF y tiempo hasta bloqueo)
-**2.2.2. Control**
-- Movimiento con teclas “WASD” y combinaciones de dos teclas para las
-diagonales.
-- Ratón: interacción con inventario (y recogida de objetos).
-- Inspección, radio y linterna: activar mediante ratón o con tecla directa.
 
-**3. Jugabilidad**
+2.2.2. **Control**
+- Ratón: interacción en el menú.
+- Movimiento con teclas “WASD” y combinaciones de dos teclas para las diagonales.
+- Abrir puertas pulsando "Z" en el teclado. 
+- Usar radio manteniendo pulsada la tecla "X". 
 
-**3.1.Mecánicas**
+3. **Jugabilidad**
+
+3.1. **Mecánicas**
 - Movimiento, 8 direcciones.
 - Autoestima, como barra de vida.
 - Inspección, aumento de visión o resalta colores de cosas Plateriñas.
