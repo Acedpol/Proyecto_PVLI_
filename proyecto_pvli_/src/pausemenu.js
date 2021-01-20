@@ -12,7 +12,7 @@ export default class pausemenu extends Phaser.GameObjects.Sprite {
       this.controls.scale = 0.05;
       this.controls.setVisible(false);
       this.controls.setDepth(3);
-      this.inventory = this.scene.add.text(x, y, 'OBJETOS \n\n\nLlaves: 0 \n\nPilas: 0', { fontFamily: 'Arial', fontSize: 14, color: '#000000' });
+      this.inventory = this.scene.add.text(x, y, 'OBJETOS \n\n\nLlaves: 0\n\n\n\n¡Encuentra a\nPlatero!', { fontFamily: 'Arial', fontSize: 14, color: '#000000' });
       this.inventory.setVisible(false);
       this.inventory.setDepth(3);
     }
@@ -23,7 +23,7 @@ export default class pausemenu extends Phaser.GameObjects.Sprite {
             this.y=this.scene.player.y; 
             this.controls.x = this.x - 85;
             this.controls.y = this.y;
-            this.inventory.setText('OBJETOS \n\n\nLlaves: ' + this.scene.contadorLlaves + '\n\nPilas: ' + this.scene.contadorPilas);
+            this.inventory.setText('OBJETOS \n\n\nLlaves: ' + this.scene.contadorLlaves + '\n\n\n\n¡Encuentra a\nPlatero!');
             this.inventory.x = this.x + 40;
             this.inventory.y = this.y - 85;
         }
