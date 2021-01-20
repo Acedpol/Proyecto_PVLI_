@@ -32,11 +32,10 @@ export default class radio extends Phaser.GameObjects.Sprite {
             this.on=false;
         }
         else{
-            if(this.on==false && this.duration>0 && this.scene.keyX.isDown){
-                this.on=true;
-        
+            if(this.on == false && this.duration>0 && Phaser.Input.Keyboard.JustDown(this.scene.keyX)){
+                this.on=true;        
             }
-            else if(this.on==true && this.duration>0 && this.scene.keyX.isDown){
+            else if(this.on == true && this.duration>0 && Phaser.Input.Keyboard.JustDown(this.scene.keyX)){
                 this.on=false;
             }
         }
