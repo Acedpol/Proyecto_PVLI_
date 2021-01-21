@@ -274,4 +274,4 @@ como sistema de mensajería.
 [PNG Nueva Arquitectura]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/ArquitecturaPlaterosTale_1.1.png
 [capturamenu]: assets/images/captura.png "Captura de Menu"
 [capturajuego]: assets/images/juego.png "Captura de Juego"
-[capturaarquitectura]: assets/documents/Arquitectura - UML/ArquitecturaNuevaPNG.png "Arquitectura"
+[capturaarquitectura]: assets/images/ArquitecturaNuevaPNG.png "Arquitectura"
