@@ -3,9 +3,9 @@ import health from './health.js';
 import pausemenu from './pausemenu.js';
 import item from './item.js';
 import healthitem from './healthitem.js';
-import levelScene from './levelScene.js';
+import levelscene from './levelscene.js';
 
-export default class menu extends levelScene {
+export default class menu extends levelscene {
     constructor() {
         super("menu");
     }

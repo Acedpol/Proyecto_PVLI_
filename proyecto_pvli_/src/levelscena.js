@@ -8,7 +8,7 @@ import batery from './batery.js';
 import zone from './zone.js'
 import healthitem from './healthitem.js';
 
-export default class game extends Phaser.Scene {
+export default class levelscene extends Phaser.Scene {
     constructor(scenekey) {
         super({ key: scenekey, physics:{
             arcade: { debug:false, },
