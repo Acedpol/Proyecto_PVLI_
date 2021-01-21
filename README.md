@@ -35,8 +35,10 @@
  #### GDD: Game Design Document / Documento de Diseño del Videojuego
 #### **Platero’s Tale**
 **Documento de Diseño - Generation Games**
+
 Cristian René Castillo de León, Pedro Pablo Cubells Talavera,
 Pablo Etayo Rodríguez y Óscar Pedregal Borreguero
+
 GenerationGamesUCM@gmail.com
 
 #### **Resumen**
@@ -48,16 +50,16 @@ GenerationGamesUCM@gmail.com
 
 **Público objetivo**:
 
-● Edad: Mayores de 12
+● Edad: Mayores de 7
 
 ● Para todos los géneros y regiones
 
-● Idioma: Castellano antiguo
+● Idioma: Inglés.
 
 **Plataformas**: Navegador con ratón y teclado
 
 Cantidades:
-**Personajes principales**: 2, Platero y JRJ.
+**Personajes principales**: Juan Ramón Jiménez y Platero.
 
 ![Captura del menú][capturamenu]
 
@@ -71,10 +73,7 @@ Hito 1: 16 de noviembre de 2020
 
 Hito 2: 14 de diciembre de 2020
 
-Hito 3: 18 de enero de 2021
-
-**Logotipo del juego**
-
+Hito 3: 20 de enero de 2021
 
 **Descripción**
 
@@ -96,9 +95,14 @@ iluminar zonas oscuras.
 El jugador superará el nivel encontrando a Platero y perderá al llegar su barra de autoestima
 a 0, el equivalente a perder la vida. Cuando haya esperanzas de encontrar a su amigo,
 recupera fuerzas y le sube la autoestima.
+
 **Versiones del documento**
+
 **1.0 Preproducción** - 20/10/2020
+
 **1.1 Hito 01** - 23/11/2020
+
+**1.2 Hito 03** - 20/11/2020
 
 ### **Índice**
 
@@ -129,32 +133,29 @@ o Controles
 
 1.2** Relato del primer nivel**
 Al acceder al nivel 1, el jugador aparecerá en la calle del pueblo frente a su casa en una de
-las esquinas del mapa. El jugador empezará con algo de dinero y con una tienda al lado de
-la salida, donde podrá comprar baterías para la radio. Tendrá que recorrer el laberinto
-sorteando a los vecinos y recogiendo pistas para encontrar a Platero. Además tendrá que
-buscar llaves para poder abrir puertas y acceder a nuevos caminos.
+las esquinas del mapa. El jugador empezará con una herradura y una batería al lado de su casa 
+para recargar su autoestima y radio respectivamente.
+Tendrá que recorrer el nivel del pueblo sorteando a los vecinos y recogiendo llaves para abrir puertas
+y encontrar a Platero. Encontrará a Platero en la esquina contraria del nivel.
 
 2. **Menús y modos de juego**
 
 2.1 **Configuración**
-Al iniciar el juego, se mostrará al personaje protagonista en su casa, este entorno hace de
-menú de inicio. El jugador podrá desplazarse y atravesar las puertas de la habitación para
-acceder a los siguientes submenús: opciones, controles, selección de nivel y créditos.
-Todos son habitaciones de la casa con la información correspondiente.
+Al iniciar el juego desde el menú principal, se mostrará al personaje protagonista en su casa, 
+este entorno hace de menú de inicio. El jugador podrá desplazarse y atravesar la puerta de la habitación 
+para acceder al nivel 1.
 
 2.2 **Interfaz y control**
 
 2.2.1. **Interfaz**
 
 **MENÚ PRINCIPAL:**
-- Opciones: ajuste de sonido.
-- Controles: muestreo de los controles que se van a usar.
-- Selección de nivel: acceso a cualquiera de los 3 niveles.
-- Créditos: muestreo de los colaboradores y recursos extras usados.
+- Botón de ajuste de sonido.
+- Botón de inicio de partida.
+
 **DENTRO DEL JUEGO:**
-- Pausa: opciones o reanudar.
-- Inventario: menú para ver los objetos.
-- Habilidades: inspección y radio. (ON/OFF y tiempo hasta bloqueo)
+- Pausa: Permite ver el inventario y los controles.
+- Habilidades: Radio. (ON/OFF para evitar enemigos.)
 
 2.2.2. **Control**
 - Ratón: interacción en el menú.
@@ -167,22 +168,16 @@ Todos son habitaciones de la casa con la información correspondiente.
 3.1. **Mecánicas**
 - Movimiento, 8 direcciones.
 - Autoestima, como barra de vida.
-- Inspección, aumento de visión o resalta colores de cosas Plateriñas.
-- Linterna, ilumina la zona cuando hay poca luz (para cuevas, callejones o niveles
-nocturnos ?) y su batería disminuye con el tiempo mientras está encendida.
 - Radio del protagonista, será una forma de evitar a los vecinos, escuchando la radio
 será inmune a la bajada de autoestima de los vecinos. La batería disminuye con el
 tiempo mientras está encendida.
-- Radio del pueblo, tendrá un área que la rodea y si el jugador entra en contacto con
-dicha área aparecerán diálogos informando sobre Platero o acontecimientos trágicos
-del momento.
 - Objetos Plateriños, suben la autoestima y son objetos con color que destacarán en
 el mundo.
-- Objetos No Plateriños, bajan la autoestima y también son coloridos, la diferencia es
-que el jugador puede con la Inspección saber si un objeto es Plateriño o no.
-- Baterías, no afectan al autoestima. Sirven para recargar la radio o la linterna, y
+- Objetos No Plateriños, bajan la autoestima y también son coloridos, estos le dañarán
+la autoestima.
+- Baterías, no afectan a la autoestima. Sirven para recargar la radio o la linterna, y
 aumentar así su tiempo de uso restante.
-- Vecinos, dan pistas al jugador o bajan la autoestima con sus críticas.
+- Vecinos, bajan la autoestima con sus críticas al entrar en su radio de terror.
 
 3.2. **Dinámicas**
 El transcurso de un nivel típico en nuestro juego será la exploración del mapa, con recogida
