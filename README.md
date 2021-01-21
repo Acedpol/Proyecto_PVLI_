@@ -16,7 +16,7 @@
  
  ###### Pivotal Tracker: [visualizar en la web][Pivotal Tracker]
 
- ###### Nueva Arquitectura en proceso: [Diagrama: Platero's Tale (on-line)][Nueva Arquitectura] - [Formato PNG][PNG Nueva Arquitectura]
+ ###### Link Arquitectura: [Diagrama: Platero's Tale (on-line)][Nueva Arquitectura]
  ___
  ![Imagen de JRJ con su burrito][logo]
  ___
@@ -252,6 +252,11 @@ como sistema de mensajería.
 - Gauntlet.
 - RPG Maker.
 
+**Arquitectura**
+
+![Arquitectura][capturaarquitectura]
+
+ ###### Link Arquitectura: [Diagrama: Platero's Tale (on-line)][Nueva Arquitectura]
 
  ###### Antiguo GDD: [Game Design Document][GDD] - [Archivo en repositorio][GDD en repo]
 
@@ -269,3 +274,4 @@ como sistema de mensajería.
 [PNG Nueva Arquitectura]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/ArquitecturaPlaterosTale_1.1.png
 [capturamenu]: assets/images/captura.png "Captura de Menu"
 [capturajuego]: assets/images/juego.png "Captura de Juego"
+[capturaarquitectura]: assets/documents/Arquitectura - UML/ArquitecturaNuevaPNG.png "Arquitectura"
