@@ -2,8 +2,8 @@ import player from './player.js';
 import health from './health.js';
 import pausemenu from './pausemenu.js';
 import item from './item.js';
-import healthitem from './healthitem.js';
 import levelscene from './levelscene.js';
+import healthitem from './healthitem.js';
 
 export default class menu extends levelscene {
     constructor() {
