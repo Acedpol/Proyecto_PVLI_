@@ -28,7 +28,7 @@
  ___
  ___
 
- #### GDD: Game Design Document / Documento de Diseño del Videojuego
+ ##### GDD: Game Design Document / Documento de Diseño del Videojuego
  #### **Platero’s Tale**
 **Documento de Diseño - Generation Games**
 
@@ -106,9 +106,7 @@ recupera fuerzas y le sube la autoestima.
 
 **II. Menús y modos de juego**
 • Configuración
-• Interfaz y control
-o Interfaz
-o Controles
+• Interfaz y controles
 
 **III. Jugabilidad**
 • Mecánicas
@@ -125,7 +123,7 @@ o Controles
 
 1. **Aspectos generales**
 
-1.2** Relato del primer nivel**
+1.2 **Relato del primer nivel :**
 Al acceder al nivel 1, el jugador aparecerá en la calle del pueblo frente a su casa en una de
 las esquinas del mapa. El jugador empezará con una herradura y una batería al lado de su casa 
 para recargar su autoestima y radio respectivamente.
@@ -153,7 +151,7 @@ para acceder al nivel 1.
 
 2.2.2. **Control**
 - Ratón: interacción en el menú.
-- Movimiento con teclas “WASD” y combinaciones de dos teclas para las diagonales.
+- Movimiento con cursores y combinaciones de dos teclas para las diagonales.
 - Abrir puertas pulsando "Z" en el teclado. 
 - Usar radio manteniendo pulsada la tecla "X". 
 
@@ -165,7 +163,7 @@ para acceder al nivel 1.
 - Radio del protagonista, será una forma de evitar a los vecinos, escuchando la radio
 será inmune a la bajada de autoestima de los vecinos. La batería disminuye con el
 tiempo mientras está encendida.
-- Objetos Plateriños, suben la autoestima y son objetos con color que destacarán en
+- Objetos Plateriños, suben la autoestima y son objetos de un color que destacará en
 el mundo.
 - Objetos No Plateriños, bajan la autoestima y también son coloridos, estos le dañarán
 la autoestima.
@@ -175,7 +173,7 @@ aumentar así su tiempo de uso restante.
 
 3.2. **Dinámicas**
 
-El transcurso de un nivel típico en nuestro juego será la exploración del mapa, puede ser 
+El transcurso de un nivel típico en nuestro juego será la exploración del mapa, como puede ser 
 recolectando llaves para las puertas y buscando a Platero, para lograr alcanzar 
 su objetivo sin morir en el intento, deberá esquivar todo
 aquello que le pueda afectar a la autoestima. El problema es que
@@ -188,10 +186,15 @@ aprovechar la radio al máximo y así esquivar enemigos.
 
 Será un juego en blanco y negro exceptuando los objetos relacionados con Platero
 (haciendo especial incapie en el cambio de colores).
+
 Los niveles están basados en el pueblo del libro, Moguer.
+
 El mapa estará construido en tiled con una estética pixel de 16bits, con sprites de objetos
 hechos por uno de los miembros del grupo, Cristian, que además hizo también el tileset del 
-suelo y hierba. Se cuenta con una variedad de sprites mayor a la que posee ahora el juego.
+suelo y hierba, por otro lado, Pablo, otro miembro, recolectó y compuso los tilesets usados
+para decorar los mapas y lograr un aspecto vintage. Se cuenta con una variedad de sprites 
+mayor a la que posee ahora el juego.
+
 En cuanto a la música, posee una banda sonora a piano tranquila con un toque de tristeza, 
 mostrando así el drama de la obra y la necesidad del protagonista por Platero. La mayoría
 de decisiones tomadas en cuanto al arte fueron en búsqueda de encontrar una estética
@@ -206,17 +209,18 @@ Sonidos: FreeSound.org.
 4.1. **Historia**
 
 Juan Ramón Jiménez es un escritor que vive en el pueblo de Moguer, Huelva, y su mejor
-amigo es su burro Platero. Todos los días sale en su búsqueda para que le alegre el día,
-pero no siempre lo encuentra con facilidad, en ocasiones tiene que recorrer todo el pueblo
-para encontrarle.
+amigo es su burro Platero ("...tan blando por fuera, que se diría todo algodón..."). 
+Todos los días sale en su búsqueda para que le alegre el día, 
+pero no siempre lo encuentra con facilidad, 
+en ocasiones tiene que recorrer todo el pueblo para encontrarle.
 
 4.2. **Niveles**
 
-El juego consta de un único nivel debido a problemas de tiempo, 
+El juego consta de un único nivel debido a la limitación del tiempo, 
 cada uno de ellos representa una zona del pueblo o sus
 alrededores, se cuenta con una clase que permitiría igualmente añadir más niveles.
 El primer nivel comienza al salir de la casa del protagonista, en una zona apartada
-del pueblo con
+del pueblo cerca de la casa del mercader de su zona.
 
 4.3. **Personajes**
 - Juan Ramón Jiménez: el personaje jugable. Es controlado por el jugador para lograr
@@ -227,14 +231,11 @@ mapa y hay que encontrarlo para avanzar al siguiente nivel.
 hay un área de terror representada como un triángulo en la dirección a la que miran.
 
 4.4. **Objetos y enemigos**
-- Objetos Plateriños
-- Herraduras
-- Objetos No Plateriños
-- Periódicos con noticias trágicas de la época
-- Objetos no dañinos, útiles
-- Radio del protagonista
-- Llaves
-- Baterías, utilizadas para recargar la radio.
+- Objetos Plateriños: Herraduras
+- Objetos No Plateriños: Periódicos con noticias trágicas de la época
+- Objetos no dañinos, útiles: Baterías y LLaves
+- Radio del protagonista: recargable
+- Baterías: utilizadas para recargar la radio.
 
 5. **Arquitectura y Gestión**
 - En cuanto a la arquitectura UML, hemos utilizado el software proporcionado por Diagrams.net,
@@ -243,7 +244,7 @@ en un principio se planeaba tener un juego mayormente extendido pero debido a la
 y ciertos problemas a la hora de trabajar en grupo, no pudo ser.
 - Pivotal como sistema de gestión utilizado para asignar tareas entre los miembros del grupo.
 - Discord como sistema de comunicación para realizar las reuniones grupales y trabajar en conjunto, así
-como sistema de mensajería.
+como sistema de mensajería. También se ha usado Telegram para fijar reuniones.
 
 6. **Referencias**
 - Platero y Yo.
