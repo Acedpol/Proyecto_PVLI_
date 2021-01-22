@@ -2,10 +2,10 @@ import player from './player.js';
 import health from './health.js';
 import pausemenu from './pausemenu.js';
 import item from './item.js';
+import levelscene from './levelscene.js';
 import healthitem from './healthitem.js';
-import levelScene from './levelScene.js';
 
-export default class menu extends levelScene {
+export default class menu extends levelscene {
     constructor() {
         super("menu");
     }

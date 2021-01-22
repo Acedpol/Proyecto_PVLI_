@@ -7,11 +7,12 @@ import key from './key.js';
 import batery from './batery.js';
 import door from './door.js';
 import zone from './zone.js';
+import levelscene from './levelscene.js';
 import healthitem from './healthitem.js';
-import levelScene from './levelScene.js';
 import radio from './radio.js';
 
-export default class game extends levelScene {
+
+export default class game extends levelscene {
     constructor() {
         super("game");
     }
