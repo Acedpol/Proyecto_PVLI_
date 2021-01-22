@@ -34,7 +34,7 @@ export default class levelscene extends Phaser.Scene {
         // // inventario
         this.contadorLlaves = 0;
         // tecla de salida
-        this.input.keyboard.addKey('ESC').on('down', event => { this.pause() });
+        this.input.keyboard.addKey('P').on('down', event => { this.pause() });
     }
 
     pause() {
